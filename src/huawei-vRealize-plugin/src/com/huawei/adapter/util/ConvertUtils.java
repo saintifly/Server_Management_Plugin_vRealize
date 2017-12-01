@@ -75,10 +75,18 @@ public class ConvertUtils {
      */
     public static String convertPresentState(int presentState) {
         
-        if (presentState == 0) {
+    	if (presentState == 0) {
+
             return "Not detected";
-        } else {
+
+        } else if (presentState == 1){
+
             return "Detected";
+
+        } else {
+
+            return "Unknown";
+
         }
         
     }
