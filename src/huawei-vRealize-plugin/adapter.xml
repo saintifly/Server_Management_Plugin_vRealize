@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <adapter>
   <version>1.1.0</version>
   <minimumProductVersion>6.0.0</minimumProductVersion>
@@ -1319,7 +1319,7 @@
           <dtType/>
         </metric>
         <metric>
-          <key>mezzMac</key>
+          <key>mezzETHMac</key>
           <nameKey>178</nameKey>
           <dashboardOrder>6</dashboardOrder>
           <dataType>string</dataType>
@@ -1360,7 +1360,35 @@
           <defaultMonitored>true</defaultMonitored>
           <dtType/>
         </metric>
-      </metrics>
+      <metric>
+<key>mezzIBMac</key>
+<nameKey>115</nameKey>
+<dashboardOrder>9</dashboardOrder>
+<dataType>string</dataType>
+<isProperty>true</isProperty>
+<isRate>false</isRate>
+<isDiscrete>false</isDiscrete>
+<isKpi>false</isKpi>
+<isImpact>false</isImpact>
+<keyAttribute>false</keyAttribute>
+<defaultMonitored>true</defaultMonitored>
+<dtType/>
+</metric>
+<metric>
+<key>mezzFCWWPN</key>
+<nameKey>189</nameKey>
+<dashboardOrder>10</dashboardOrder>
+<dataType>string</dataType>
+<isProperty>true</isProperty>
+<isRate>false</isRate>
+<isDiscrete>false</isDiscrete>
+<isKpi>false</isKpi>
+<isImpact>false</isImpact>
+<keyAttribute>false</keyAttribute>
+<defaultMonitored>true</defaultMonitored>
+<dtType/>
+</metric>
+</metrics>
     </genericObject>
     <genericObject>
       <key>card</key>
@@ -1507,7 +1535,7 @@
     <enabled>true</enabled>
   </licensing>
   <parents>
-    <parent>E:/project/v_realize/github-src_mosai/Server_Management_Plugin_vRealize/src/huawei-vRealize-management-pack</parent>
+    <parent>E:/project/v_realize/github-src/Server_Management_Plugin_vRealize/src/huawei-vRealize-management-pack</parent>
   </parents>
   <objectIdentifiers>
     <objectIdentifier>
