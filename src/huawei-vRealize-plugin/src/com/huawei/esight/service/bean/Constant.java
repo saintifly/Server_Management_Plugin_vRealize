@@ -75,7 +75,12 @@ public class Constant {
     public static final String ATTR_MEZZ_HEALTH_STATUS = "mezzHealthStatus";
     public static final String ATTR_MEZZ_INFO = "mezzInfo";
     public static final String ATTR_MEZZ_LOCATION = "mezzLocation";
+    
+    @Deprecated
     public static final String ATTR_MEZZ_MAC = "mezzMac";
+    public static final String ATTR_MEZZ_ETH_MAC = "mezzETHMac";
+    public static final String ATTR_MEZZ_IB_MAC = "mezzIBMac";
+    public static final String ATTR_MEZZ_FCWWPN = "mezzFCWWPN";
     
     
     

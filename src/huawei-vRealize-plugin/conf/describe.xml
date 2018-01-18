@@ -197,9 +197,11 @@
 <ResourceAttribute dashboardOrder="3" dataType="string" defaultMonitored="true" isProperty="true" key="presentState" nameKey="175" unit=""/>
 <ResourceAttribute dashboardOrder="4" dataType="string" defaultMonitored="true" isProperty="true" key="mezzInfo" nameKey="176" unit=""/>
 <ResourceAttribute dashboardOrder="5" dataType="string" defaultMonitored="true" isProperty="true" key="mezzLocation" nameKey="177" unit=""/>
-<ResourceAttribute dashboardOrder="6" dataType="string" defaultMonitored="true" isProperty="true" key="mezzMac" nameKey="178" unit=""/>
+<ResourceAttribute dashboardOrder="6" dataType="string" defaultMonitored="true" isProperty="true" key="mezzETHMac" nameKey="178" unit=""/>
 <ResourceAttribute dashboardOrder="7" dataType="string" defaultMonitored="true" isProperty="true" key="moId" nameKey="179" unit=""/>
 <ResourceAttribute dashboardOrder="8" dataType="string" defaultMonitored="true" isProperty="true" key="uuid" nameKey="180" unit=""/>
+<ResourceAttribute dashboardOrder="9" dataType="string" defaultMonitored="true" isProperty="true" key="mezzIBMac" nameKey="115" unit=""/>
+<ResourceAttribute dashboardOrder="10" dataType="string" defaultMonitored="true" isProperty="true" key="mezzFCWWPN" nameKey="189" unit=""/>
 </ResourceKind>
 <ResourceKind credentialKind="" key="cardGroup" nameKey="181" showTag="false" type="8">
 <ResourceIdentifier dispOrder="1" enum="false" identType="1" key="id" nameKey="182" required="true" type="string"/>

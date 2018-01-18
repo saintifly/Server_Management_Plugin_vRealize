@@ -24,7 +24,7 @@
 <platform>Windows</platform>
 </platforms>
 <adapters>
-<adapter>E:/project/v_realize/github-src_mosai/Server_Management_Plugin_vRealize/src/huawei-vRealize-plugin</adapter>
+<adapter>E:/project/v_realize/github-src/Server_Management_Plugin_vRealize/src/huawei-vRealize-plugin</adapter>
 </adapters>
 <scripts runScriptsOnAllNodes="false">
 <pre>preAdapters.py</pre>
