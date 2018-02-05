@@ -149,10 +149,19 @@ public class ConvertUtils {
      * @param rotatePercent 风扇转百分比
      * @return 转换后的字符串
      */
-    public static String convertRotatePercent(int rotatePercent) {
+    public static String convertRotatePercent(int controlModel, int rotatePercent) {
         
+    	/**
         if (rotatePercent == 255) {
             return "Automatic";
+        } else if (rotatePercent >= 0 && rotatePercent <= 100) {
+            return "" + rotatePercent;
+        } else {
+            return "--";
+        }
+        */
+        if(controlModel == 0 || rotatePercent == 255){
+            return "--";
         } else if (rotatePercent >= 0 && rotatePercent <= 100) {
             return "" + rotatePercent;
         } else {
@@ -169,7 +178,7 @@ public class ConvertUtils {
     public static String convertBoardType(int boardType) {
         
         if (boardType == 0) {
-            return "Blade";
+            return "Mainboard";
         } else if (boardType == 1) {
             return "Switchboard";
         } else {

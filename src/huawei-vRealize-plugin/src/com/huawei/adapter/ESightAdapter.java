@@ -137,6 +137,7 @@ public class ESightAdapter extends AdapterBase {
                 
                 ServerDeviceDetailBean device = null;
                 
+                /**
                 if (deviceBean.getChildBlades().isEmpty() == false) {
                     device = new ServerDeviceDetailBean(deviceBean);         
                 } else {
@@ -150,6 +151,13 @@ public class ESightAdapter extends AdapterBase {
                     device.setVersion(deviceBean.getVersion());
                     device.setLocation(deviceBean.getLocation());
                     device.setManufacturer(deviceBean.getManufacturer());
+                }
+                **/
+                device = service.getServerDetail(deviceBean.getDn());
+                
+                if (device == null) {
+                    logger.error("Failed to get detail of device with dn = " + deviceBean.getDn());
+                    continue;
                 }
                 
                 ResourceKey deviceResourceKey = device.convert2Resource(deviceBean.getDn(), 

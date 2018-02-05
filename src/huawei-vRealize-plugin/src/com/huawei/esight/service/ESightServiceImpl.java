@@ -52,7 +52,7 @@ public class ESightServiceImpl implements ESightService {
             String response = 
                     api.doCall(servertype, pageNo + "", Constant.PAGE_SIZE, String.class); 
             
-            logger.info("Raw list of type '"+servertype+"', pageNo='"+pageNo+"' is \n  "+response);
+            logger.info("Json string for server type = '"+servertype+"', pageNo='"+pageNo+"' is :  "+response);
             
             ResponseServerDeviceListBean bean = ConvertUtils.json2Object(response, 
                     ResponseServerDeviceListBean.class);
@@ -103,7 +103,7 @@ public class ESightServiceImpl implements ESightService {
                     new GetServerDeviceDetailApi<String>(esightServer, openIdProvider)
                     .doCall(dn, String.class);
             
-            logger.info("Raw detail of dn '"+dn+"' is \n  "+response);
+            logger.info("Json string for device with dn = '"+dn+"' is: "+response);
             
             ResponseServerDeviceDetailBean bean = ConvertUtils.json2Object(response, 
                     ResponseServerDeviceDetailBean.class);

@@ -39,6 +39,8 @@ public class BoardBean implements TreeNodeResource {
     
     private int presentState = 1;
     
+    private String ipAddress;
+    
     public int getPresentState() {
         return presentState;
     }
@@ -121,7 +123,15 @@ public class BoardBean implements TreeNodeResource {
         this.moId = moId;
     }
     
-    @Override
+    public String getIpAddress() {
+		return ipAddress;
+	}
+
+	public void setIpAddress(String ipAddress) {
+		this.ipAddress = ipAddress;
+	}
+
+	@Override
     public ResourceKey convert2Resource(String id, String adapterKind, Map<ResourceKey, 
             List<MetricData>> metricsByResource) {
         
@@ -161,6 +171,8 @@ public class BoardBean implements TreeNodeResource {
                 new MetricData(new MetricKey(false).add(Constant.ATTR_HEALTHSTATE), timestamp, 
                         ConvertUtils.convertHealthState(this.healthState)));
         
+        metricDataList.add(
+                new MetricData(new MetricKey(true).add(Constant.ATTR_IP_ADDRESS), timestamp, this.ipAddress));
         
         //关联key和属性值
         metricsByResource.put(resourceKey, metricDataList);

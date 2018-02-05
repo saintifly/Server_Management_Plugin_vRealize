@@ -391,7 +391,21 @@
           <defaultMonitored>true</defaultMonitored>
           <dtType/>
         </metric>
-      </metrics>
+      <metric>
+<key>ipAddress</key>
+<nameKey>193</nameKey>
+<dashboardOrder>11</dashboardOrder>
+<dataType>string</dataType>
+<isProperty>true</isProperty>
+<isRate>false</isRate>
+<isDiscrete>false</isDiscrete>
+<isKpi>false</isKpi>
+<isImpact>false</isImpact>
+<keyAttribute>false</keyAttribute>
+<defaultMonitored>true</defaultMonitored>
+<dtType/>
+</metric>
+</metrics>
     </genericObject>
     <genericObject>
       <key>memory</key>

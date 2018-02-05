@@ -57,9 +57,9 @@ public class ESightServiceImplTest {
                 Assert.assertNotNull(serverList);
                 logger.info("list of serverType = " + serverType + "\n " + serverList);
                 for (ServerDeviceBean bean : serverList) {
-                    if (bean.getChildBlades().isEmpty() == false) {
-                        continue;
-                    }
+//                    if (bean.getChildBlades().isEmpty() == false) {
+//                        continue;
+//                    }
                     ServerDeviceDetailBean detailBean = service.getServerDetail(bean.getDn());
                     if (detailBean == null) {
                         logger.error("faile to fetch detail for device with dn ='" + bean.getDn() + "'");

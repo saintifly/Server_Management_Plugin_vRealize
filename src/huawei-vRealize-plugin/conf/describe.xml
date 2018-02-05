@@ -58,6 +58,7 @@
 
 
 <ResourceAttribute dashboardOrder="7" dataType="string" defaultMonitored="true" isProperty="true" key="presentState" nameKey="167" unit=""/>
+<ResourceAttribute dashboardOrder="11" dataType="string" defaultMonitored="true" isProperty="true" key="ipAddress" nameKey="193" unit=""/>
 </ResourceKind>
 <ResourceKind credentialKind="" key="memory" nameKey="30" showTag="false" type="1">
 
