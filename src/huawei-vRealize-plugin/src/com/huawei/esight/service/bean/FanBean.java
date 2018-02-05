@@ -121,7 +121,7 @@ public class FanBean implements TreeNodeResource {
         metricDataList.add(
                 new MetricData(new MetricKey(true, Constant.ATTR_ROTATE), timestamp, this.rotate));
         metricDataList.add(new MetricData(new MetricKey(true, Constant.ATTR_ROTATEPERCENT), timestamp, 
-                ConvertUtils.convertRotatePercent(this.rotatePercent)));
+                ConvertUtils.convertRotatePercent(this.controlModel, this.rotatePercent)));
         metricDataList.add(new MetricData(new MetricKey(true, Constant.ATTR_CONTROLMODEL), timestamp, 
                 ConvertUtils.convertControlModel(this.controlModel)));
         
