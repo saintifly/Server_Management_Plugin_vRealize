@@ -12,7 +12,7 @@ I. General Information
 
 II. Description
 
-    The vRealize Plugin is a plug-in integrated in the vRealize and used for Huawei Server management. It can be used to connect to multiple eSight system and view the servers managed by eSight.
+    The vRealize Plugin is a plug-in integrated in the vRealize and used for Huawei Server management. It can be used to connect to multiple eSight system and view the servers managed by eSight.
 
 III.Supported software versions
 
