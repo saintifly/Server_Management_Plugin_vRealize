@@ -8,7 +8,7 @@ I. General Information
 
     Name:     vRealize Plugin for Huawei Server
     Category: Monitoring
-    Version:  1.1.0
+    Version:  1.2.0
 
 II. Description
 
