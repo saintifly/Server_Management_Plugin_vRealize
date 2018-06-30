@@ -16,11 +16,11 @@ II. Description
 
 III.Supported software versions
 
-    vRealize Operations Manager 6.4/6.5/6.6 
+    vRealize Operations Manager 6.4/6.5/6.6/6.7 
        
 IV.Software Requirements
 
-    eSight V300R008C00SPC201
+    eSight V300R009C00SPC201
 
 V.Supported Device
 
