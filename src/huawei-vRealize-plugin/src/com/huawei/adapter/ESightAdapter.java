@@ -108,7 +108,8 @@ public class ESightAdapter extends AdapterBase {
         List<ResourceKey> allResourceList = new ArrayList<>();
         String[] serverTypes = new String[]{Constant.TREE_SERVER_TYPE_RACK,
                 Constant.TREE_SERVER_TYPE_BLADE,
-                Constant.TREE_SERVER_TYPE_HIGHDENSITY};
+                Constant.TREE_SERVER_TYPE_HIGHDENSITY,
+                Constant.TREE_SERVER_TYPE_KUNLUN};
         
         //服务器类型keyList
         List<ResourceKey> serverTypeKeyList = new ArrayList<ResourceKey>();
@@ -370,9 +371,10 @@ public class ESightAdapter extends AdapterBase {
                 if (mezzBeans.isEmpty() == false) {
                     List<ResourceKey> mezzResourceKey = new ArrayList<ResourceKey>();
                     for (MezzBean bean : mezzBeans) {
-                        if (ConvertUtils.isOffline(bean.getPresentState())) {
-                            continue;
-                        }
+                    	//show all the Mezz card, added on 2018.06.26
+//                        if (ConvertUtils.isOffline(bean.getPresentState())) {
+//                            continue;
+//                        }
                         ResourceKey key = bean.convert2Resource(host + deviceBean.getDn(), 
                                 getAdapterKind(), metricsByResource);
                         mezzResourceKey.add(key);

@@ -22,6 +22,7 @@ public class Constant {
     public static final String TREE_SERVER_TYPE_RACK = "rack";
     public static final String TREE_SERVER_TYPE_BLADE = "blade";
     public static final String TREE_SERVER_TYPE_HIGHDENSITY = "highdensity";
+    public static final String TREE_SERVER_TYPE_KUNLUN = "kunlun";
     
     public static final String KIND_SERVER_TYPES = "serverTypes";
     public static final String ATTR_ID = "id";

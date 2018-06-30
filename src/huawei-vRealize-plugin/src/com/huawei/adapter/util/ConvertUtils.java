@@ -27,14 +27,21 @@ public class ConvertUtils {
             case 0 : {
                 return "Normal";
             }
-            case -1: {
-                return "Offline";
+            case 2:
+            case 3:
+            case 4:
+            case 5:
+            case 6:
+            case 7:
+            case 8: {
+                return "Faulty";
             }
+            case -1:
             case -2: {
                 return "Unknown";
             }
             default: {
-                return "Faulty";
+                return "Unknown";
             }
             
         } 
@@ -42,6 +49,7 @@ public class ConvertUtils {
     
     
     /**
+     * @deprecated since 2018.06.26
      * RAID健康状态转换处理.
      * 1 = normal
      * 0 = offline
@@ -115,11 +123,11 @@ public class ConvertUtils {
      * @param powerProtocol 电源协议
      * @return 转换后的字符串
      */
-    public static String convertPowerProtocol(int powerProtocol) {
+    public static String convertPowerProtocol(String powerProtocol) {
         
-        if (powerProtocol == 0) {
+        if ("0".equals(powerProtocol)) {
             return "PSMI";
-        } else if (powerProtocol == 1) {
+        } else if ("1".equals(powerProtocol)) {
             return "PMBUS";
         } else {
             return "";

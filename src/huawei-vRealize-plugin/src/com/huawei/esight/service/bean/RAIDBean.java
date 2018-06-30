@@ -100,7 +100,7 @@ public class RAIDBean implements TreeNodeResource {
                 new MetricKey(true, Constant.ATTR_NAME), timestamp, this.name));
         metricDataList.add(new MetricData(
                 new MetricKey(false, Constant.ATTR_HEALTHSTATE), timestamp, 
-                ConvertUtils.convertHealthState4Raid(this.healthState)));
+                ConvertUtils.convertHealthState(this.healthState)));
         metricDataList.add(new MetricData(
                 new MetricKey(true, Constant.ATTR_RAID_TYPE), timestamp, this.raidType));
         metricDataList.add(new MetricData(

@@ -37,7 +37,7 @@ public class PSUBean implements TreeNodeResource {
     
     private int presentState;
     
-    private int powerProtocol;
+    private String powerProtocol;
     
     private String ratePower;
     
@@ -115,11 +115,11 @@ public class PSUBean implements TreeNodeResource {
         this.presentState = presentState;
     }
     
-    public int getPowerProtocol() {
+    public String getPowerProtocol() {
         return powerProtocol;
     }
     
-    public void setPowerProtocol(int powerProtocol) {
+    public void setPowerProtocol(String powerProtocol) {
         this.powerProtocol = powerProtocol;
     }
     
