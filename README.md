@@ -27,8 +27,9 @@ V.Supported Device
     Huawei Blade Server:        E9000
     Huawei Rack Server:         RH2288H V2,RH1288 V3,RH2288 V3,RH2288H V3,RH5885 V3,RH8100 V3,1288H V5,2288H V5,2488 V5
     Huawei High-density Server: XH321 V3,XH620 V3,XH622 V3,XH628 V3
+    Huawei KunLun Server:       9008,9016,9032
     
-    For more details about compatible with Huawei Server,Please refer to the Server Devices sheet of excel document eSight V300R008C00SPC200 Supported Devices 02
+    For more details about compatible with Huawei Server,Please refer to the Server Devices sheet of excel document eSight V300R009C00SPC200 Supported Devices 02
 
 VI. Additional Resources
 
