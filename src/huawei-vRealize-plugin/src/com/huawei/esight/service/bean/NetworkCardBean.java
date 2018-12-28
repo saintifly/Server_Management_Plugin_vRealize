@@ -21,6 +21,9 @@ public class NetworkCardBean implements TreeNodeResource {
     private String macAdress;
     private String moId;
     private String uuid;
+    //added since 2018.12.12
+    private String portName;
+    private String linkStatus;
     
     public String getNetWorkCardName() {
         return netWorkCardName;
@@ -54,6 +57,22 @@ public class NetworkCardBean implements TreeNodeResource {
         this.uuid = uuid;
     }
     
+	public String getPortName() {
+		return portName;
+	}
+
+	public void setPortName(String portName) {
+		this.portName = portName;
+	}
+
+	public String getLinkStatus() {
+		return linkStatus;
+	}
+
+	public void setLinkStatus(String linkStatus) {
+		this.linkStatus = linkStatus;
+	}    
+    
     @Override
     public ResourceKey convert2Resource(String dn, String adapterKind,
             Map<ResourceKey, List<MetricData>> metricsByResource) {
@@ -77,8 +96,16 @@ public class NetworkCardBean implements TreeNodeResource {
         
         metricDataList.add(
                 new MetricData(new MetricKey(true, Constant.ATTR_UUID), timestamp, this.uuid));
+        
+        metricDataList.add(
+                new MetricData(new MetricKey(true, Constant.ATTR_PORT_NAME), timestamp, this.portName));
+        
+        metricDataList.add(
+                new MetricData(new MetricKey(true, Constant.ATTR_LINK_STATUS), timestamp, this.linkStatus));
+        
         //关联key和属性值
         metricsByResource.put(resourceKey, metricDataList);
         return resourceKey;
     }
+
 }

@@ -131,25 +131,32 @@
 
 <ResourceKind credentialKind="" key="boardGroup" nameKey="85" showTag="false" type="8">
 <ResourceIdentifier dispOrder="1" enum="false" identType="1" key="id" nameKey="61" required="true" type="string"/>
+<ResourceAttribute dashboardOrder="1" dataType="string" defaultMonitored="true" isProperty="false" key="healthState" nameKey="197" unit=""/>
 </ResourceKind>
 <ResourceKind credentialKind="" key="cpuGroup" nameKey="56" showTag="false" type="8">
 <ResourceIdentifier dispOrder="1" enum="false" identType="1" key="id" nameKey="75" required="true" type="string"/>
+<ResourceAttribute dashboardOrder="1" dataType="string" defaultMonitored="true" key="healthState" nameKey="201" unit=""/>
 </ResourceKind>
 <ResourceKind credentialKind="" key="devicesGroup" nameKey="66" showTag="false" type="8">
 <ResourceIdentifier dispOrder="1" enum="false" identType="1" key="id" nameKey="74" required="true" type="string"/>
+<ResourceAttribute dashboardOrder="1" dataType="string" defaultMonitored="true" key="status" nameKey="208" unit=""/>
 </ResourceKind>
 <ResourceKind credentialKind="" key="diskGroup" nameKey="62" showTag="false" type="8">
 <ResourceIdentifier dispOrder="1" enum="false" identType="1" key="id" nameKey="73" required="true" type="string"/>
+<ResourceAttribute dashboardOrder="1" dataType="string" defaultMonitored="true" key="healthState" nameKey="209" unit=""/>
 </ResourceKind>
 
 <ResourceKind credentialKind="" key="fanGroup" nameKey="63" showTag="false" type="8">
 <ResourceIdentifier dispOrder="1" enum="false" identType="1" key="id" nameKey="72" required="true" type="string"/>
+<ResourceAttribute dashboardOrder="1" dataType="string" defaultMonitored="true" key="healthState" nameKey="210" unit=""/>
 </ResourceKind>
 <ResourceKind credentialKind="" key="memoryGroup" nameKey="64" showTag="false" type="8">
 <ResourceIdentifier dispOrder="1" enum="false" identType="1" key="id" nameKey="67" required="true" type="string"/>
+<ResourceAttribute dashboardOrder="1" dataType="string" defaultMonitored="true" key="healthState" nameKey="211" unit=""/>
 </ResourceKind>
 <ResourceKind credentialKind="" key="psuGroup" nameKey="60" showTag="false" type="8">
 <ResourceIdentifier dispOrder="1" enum="false" identType="1" key="id" nameKey="68" required="true" type="string"/>
+<ResourceAttribute dashboardOrder="1" dataType="string" defaultMonitored="true" key="healthState" nameKey="214" unit=""/>
 </ResourceKind>
 <ResourceKind credentialKind="" key="serverTypes" nameKey="65" showTag="false" type="8">
 <ResourceIdentifier dispOrder="1" enum="false" identType="1" key="id" nameKey="76" required="true" type="string"/>
@@ -168,6 +175,7 @@
 </ResourceKind>
 <ResourceKind credentialKind="" key="pcieGroup" nameKey="138" showTag="false" type="1">
 <ResourceIdentifier dispOrder="1" enum="false" identType="1" key="id" nameKey="139" required="true" type="string"/>
+<ResourceAttribute dashboardOrder="1" dataType="string" defaultMonitored="true" key="pcieSsdCardHealthStatus" nameKey="213" unit=""/>
 </ResourceKind>
 
 <ResourceKind credentialKind="" key="raid" nameKey="140" showTag="false" type="1">
@@ -183,12 +191,14 @@
 </ResourceKind>
 <ResourceKind credentialKind="" key="raidGroup" nameKey="149" showTag="false" type="1">
 <ResourceIdentifier dispOrder="1" enum="false" identType="1" key="id" nameKey="150" required="true" type="string"/>
+<ResourceAttribute dashboardOrder="1" dataType="string" defaultMonitored="true" key="healthState" nameKey="215" unit=""/>
 </ResourceKind>
 
 
 
 <ResourceKind credentialKind="" key="mezzGroup" nameKey="169" showTag="false" type="8">
 <ResourceIdentifier dispOrder="1" enum="false" identType="1" key="id" nameKey="170" required="true" type="string"/>
+<ResourceAttribute dashboardOrder="1" dataType="string" defaultMonitored="true" key="mezzHealthStatus" nameKey="212" unit=""/>
 </ResourceKind>
 <ResourceKind credentialKind="" key="mezz" nameKey="171" showTag="false" type="1">
 <ResourceIdentifier dispOrder="1" enum="false" identType="1" key="id" nameKey="172" required="true" type="string"/>
@@ -209,10 +219,13 @@
 </ResourceKind>
 <ResourceKind credentialKind="" key="card" nameKey="183" showTag="false" type="1">
 <ResourceIdentifier dispOrder="1" enum="false" identType="1" key="id" nameKey="184" required="true" type="string"/>
-<ResourceAttribute dashboardOrder="1" dataType="string" defaultMonitored="true" isProperty="true" key="networkCardName" nameKey="185" unit=""/>
+
 <ResourceAttribute dashboardOrder="2" dataType="string" defaultMonitored="true" isProperty="true" key="macAdress" nameKey="186" unit=""/>
 <ResourceAttribute dashboardOrder="3" dataType="string" defaultMonitored="true" isProperty="true" key="moId" nameKey="187" unit=""/>
 <ResourceAttribute dashboardOrder="4" dataType="string" defaultMonitored="true" isProperty="true" key="uuid" nameKey="188" unit=""/>
+<ResourceAttribute dashboardOrder="5" dataType="string" defaultMonitored="true" isProperty="true" key="portName" nameKey="216" unit=""/>
+<ResourceAttribute dashboardOrder="6" dataType="string" defaultMonitored="true" isProperty="true" key="linkStatus" nameKey="217" unit=""/>
+<ResourceAttribute dashboardOrder="1" dataType="string" defaultMonitored="true" isProperty="true" key="netWorkCardName" nameKey="185" unit=""/>
 </ResourceKind>
 </ResourceKinds>
 
@@ -278,296 +291,883 @@
         </AlertDefinition> -->
         
       <!-- CPU -->
-        <AlertDefinition adapterKind="ESightAdapter" id="cpuAlertDefinitions1" nameKey="71" resourceKind="cpu" subType="19" type="17">
+        <AlertDefinition adapterKind="ESightAdapter" id="cpuAlertDefinitionsInfo" nameKey="701" resourceKind="cpu" subType="19" type="17">
             <State severity="automatic">
                 <SymptomSet applyOn="self" operator="or">
-                    <Symptom ref="SymptomDefinitionCpu1"/>
+                    <Symptom ref="SymptomDefinitionCpuInfo"/>
                 </SymptomSet>
                 <Impact key="health" type="badge"/>
             </State>
         </AlertDefinition>
         
-         <AlertDefinition adapterKind="ESightAdapter" id="cpuAlertDefinitions2" nameKey="113" resourceKind="cpu" subType="19" type="17">
+         <AlertDefinition adapterKind="ESightAdapter" id="cpuAlertDefinitionsWarning" nameKey="702" resourceKind="cpu" subType="19" type="17">
             <State severity="automatic">
                 <SymptomSet applyOn="self" operator="or">
-                    <Symptom ref="SymptomDefinitionCpu2"/>
+                    <Symptom ref="SymptomDefinitionCpuWarning"/>
                 </SymptomSet>
                 <Impact key="health" type="badge"/>
             </State>
         </AlertDefinition>
         
-         <AlertDefinition adapterKind="ESightAdapter" id="cpuAlertDefinitions3" nameKey="114" resourceKind="cpu" subType="19" type="17">
+         <AlertDefinition adapterKind="ESightAdapter" id="cpuAlertDefinitionsUnknown" nameKey="703" resourceKind="cpu" subType="19" type="17">
             <State severity="automatic">
                 <SymptomSet applyOn="self" operator="or">
-                    <Symptom ref="SymptomDefinitionCpuM2"/>
+                    <Symptom ref="SymptomDefinitionCpuUnkown"/>
                 </SymptomSet>
                 <Impact key="health" type="badge"/>
             </State>
         </AlertDefinition>
         
-  
-        
-        <!-- board -->
-        <AlertDefinition adapterKind="ESightAdapter" id="boardAlertDefinitions1" nameKey="116" resourceKind="board" subType="19" type="15">
+         <AlertDefinition adapterKind="ESightAdapter" id="cpuAlertDefinitionsImmediate" nameKey="704" resourceKind="cpu" subType="19" type="17">
             <State severity="automatic">
                 <SymptomSet applyOn="self" operator="or">
-                    <Symptom ref="SymptomDefinitionBoard1"/>
+                    <Symptom ref="SymptomDefinitionCpuImmediate"/>
+                </SymptomSet>
+                <Impact key="health" type="badge"/>
+            </State>
+        </AlertDefinition>
+
+        <AlertDefinition adapterKind="ESightAdapter" id="cpuAlertDefinitionsCritical" nameKey="705" resourceKind="cpu" subType="19" type="17">
+            <State severity="automatic">
+                <SymptomSet applyOn="self" operator="or">
+                    <Symptom ref="SymptomDefinitionCpuCritical"/>
                 </SymptomSet>
                 <Impact key="health" type="badge"/>
             </State>
         </AlertDefinition>
         
-        <AlertDefinition adapterKind="ESightAdapter" id="boardAlertDefinitions2" nameKey="117" resourceKind="board" subType="19" type="15">
+        <!-- CPU group -->
+        <AlertDefinition adapterKind="ESightAdapter" id="cpuGroupAlertDefinitionsInfo" nameKey="701" resourceKind="cpuGroup" subType="19" type="17">
             <State severity="automatic">
                 <SymptomSet applyOn="self" operator="or">
-                    <Symptom ref="SymptomDefinitionBoard2"/>
+                    <Symptom ref="SymptomDefinitionCpuGroupInfo"/>
                 </SymptomSet>
                 <Impact key="health" type="badge"/>
             </State>
         </AlertDefinition>
         
-        <AlertDefinition adapterKind="ESightAdapter" id="boardAlertDefinitions3" nameKey="118" resourceKind="board" subType="19" type="15">
+         <AlertDefinition adapterKind="ESightAdapter" id="cpuGroupAlertDefinitionsWarning" nameKey="702" resourceKind="cpuGroup" subType="19" type="17">
             <State severity="automatic">
                 <SymptomSet applyOn="self" operator="or">
-                    <Symptom ref="SymptomDefinitionBoardM2"/>
+                    <Symptom ref="SymptomDefinitionCpuGroupWarning"/>
                 </SymptomSet>
                 <Impact key="health" type="badge"/>
             </State>
         </AlertDefinition>
         
+         <AlertDefinition adapterKind="ESightAdapter" id="cpuGroupAlertDefinitionsUnknown" nameKey="703" resourceKind="cpuGroup" subType="19" type="17">
+            <State severity="automatic">
+                <SymptomSet applyOn="self" operator="or">
+                    <Symptom ref="SymptomDefinitionCpuGroupUnkown"/>
+                </SymptomSet>
+                <Impact key="health" type="badge"/>
+            </State>
+        </AlertDefinition>
+        
+         <AlertDefinition adapterKind="ESightAdapter" id="cpuGroupAlertDefinitionsImmediate" nameKey="704" resourceKind="cpuGroup" subType="19" type="17">
+            <State severity="automatic">
+                <SymptomSet applyOn="self" operator="or">
+                    <Symptom ref="SymptomDefinitionCpuGroupImmediate"/>
+                </SymptomSet>
+                <Impact key="health" type="badge"/>
+            </State>
+        </AlertDefinition>
+
+        <AlertDefinition adapterKind="ESightAdapter" id="cpuGroupAlertDefinitionsCritical" nameKey="705" resourceKind="cpuGroup" subType="19" type="17">
+            <State severity="automatic">
+                <SymptomSet applyOn="self" operator="or">
+                    <Symptom ref="SymptomDefinitionCpuGroupCritical"/>
+                </SymptomSet>
+                <Impact key="health" type="badge"/>
+            </State>
+        </AlertDefinition>     
+        
+        <!-- board -->      
+        <AlertDefinition adapterKind="ESightAdapter" id="boardAlertDefinitionsInfo" nameKey="801" resourceKind="board" subType="19" type="17">
+            <State severity="automatic">
+                <SymptomSet applyOn="self" operator="or">
+                    <Symptom ref="SymptomDefinitionBoardInfo"/>
+                </SymptomSet>
+                <Impact key="health" type="badge"/>
+            </State>
+        </AlertDefinition>
+        
+         <AlertDefinition adapterKind="ESightAdapter" id="boardAlertDefinitionsWarning" nameKey="802" resourceKind="board" subType="19" type="17">
+            <State severity="automatic">
+                <SymptomSet applyOn="self" operator="or">
+                    <Symptom ref="SymptomDefinitionBoardWarning"/>
+                </SymptomSet>
+                <Impact key="health" type="badge"/>
+            </State>
+        </AlertDefinition>
+        
+         <AlertDefinition adapterKind="ESightAdapter" id="boardAlertDefinitionsUnknown" nameKey="803" resourceKind="board" subType="19" type="17">
+            <State severity="automatic">
+                <SymptomSet applyOn="self" operator="or">
+                    <Symptom ref="SymptomDefinitionBoardUnkown"/>
+                </SymptomSet>
+                <Impact key="health" type="badge"/>
+            </State>
+        </AlertDefinition>
+        
+         <AlertDefinition adapterKind="ESightAdapter" id="boardAlertDefinitionsImmediate" nameKey="804" resourceKind="board" subType="19" type="17">
+            <State severity="automatic">
+                <SymptomSet applyOn="self" operator="or">
+                    <Symptom ref="SymptomDefinitionBoardImmediate"/>
+                </SymptomSet>
+                <Impact key="health" type="badge"/>
+            </State>
+        </AlertDefinition>
+
+        <AlertDefinition adapterKind="ESightAdapter" id="boardAlertDefinitionsCritical" nameKey="805" resourceKind="board" subType="19" type="17">
+            <State severity="automatic">
+                <SymptomSet applyOn="self" operator="or">
+                    <Symptom ref="SymptomDefinitionBoardCritical"/>
+                </SymptomSet>
+                <Impact key="health" type="badge"/>
+            </State>
+        </AlertDefinition>
+        
+        <!-- board group -->
+        <AlertDefinition adapterKind="ESightAdapter" id="boardAlertDefinitionsInfo" nameKey="801" resourceKind="boardGroup" subType="19" type="17">
+            <State severity="automatic">
+                <SymptomSet applyOn="self" operator="or">
+                    <Symptom ref="SymptomDefinitionBoardGroupInfo"/>
+                </SymptomSet>
+                <Impact key="health" type="badge"/>
+            </State>
+        </AlertDefinition>
+        
+         <AlertDefinition adapterKind="ESightAdapter" id="boardAlertDefinitionsWarning" nameKey="802" resourceKind="boardGroup" subType="19" type="17">
+            <State severity="automatic">
+                <SymptomSet applyOn="self" operator="or">
+                    <Symptom ref="SymptomDefinitionBoardGroupWarning"/>
+                </SymptomSet>
+                <Impact key="health" type="badge"/>
+            </State>
+        </AlertDefinition>
+        
+         <AlertDefinition adapterKind="ESightAdapter" id="boardAlertDefinitionsUnknown" nameKey="803" resourceKind="boardGroup" subType="19" type="17">
+            <State severity="automatic">
+                <SymptomSet applyOn="self" operator="or">
+                    <Symptom ref="SymptomDefinitionBoardGroupUnkown"/>
+                </SymptomSet>
+                <Impact key="health" type="badge"/>
+            </State>
+        </AlertDefinition>
+        
+         <AlertDefinition adapterKind="ESightAdapter" id="boardAlertDefinitionsImmediate" nameKey="804" resourceKind="boardGroup" subType="19" type="17">
+            <State severity="automatic">
+                <SymptomSet applyOn="self" operator="or">
+                    <Symptom ref="SymptomDefinitionBoardGroupImmediate"/>
+                </SymptomSet>
+                <Impact key="health" type="badge"/>
+            </State>
+        </AlertDefinition>
+
+        <AlertDefinition adapterKind="ESightAdapter" id="boardAlertDefinitionsCritical" nameKey="805" resourceKind="boardGroup" subType="19" type="17">
+            <State severity="automatic">
+                <SymptomSet applyOn="self" operator="or">
+                    <Symptom ref="SymptomDefinitionBoardGroupCritical"/>
+                </SymptomSet>
+                <Impact key="health" type="badge"/>
+            </State>
+        </AlertDefinition>
 
         
         <!-- memory -->
-        <AlertDefinition adapterKind="ESightAdapter" id="memoryAlertDefinitions1" nameKey="81" resourceKind="memory" subType="19" type="17">
+        <AlertDefinition adapterKind="ESightAdapter" id="memoryAlertDefinitionsInfo" nameKey="901" resourceKind="memory" subType="19" type="17">
             <State severity="automatic">
                 <SymptomSet applyOn="self" operator="or">
-                    <Symptom ref="SymptomDefinitionMemory1"/>
+                    <Symptom ref="SymptomDefinitionMemoryInfo"/>
                 </SymptomSet>
                 <Impact key="health" type="badge"/>
             </State>
         </AlertDefinition>
         
-         <AlertDefinition adapterKind="ESightAdapter" id="memoryAlertDefinitions2" nameKey="120" resourceKind="memory" subType="19" type="17">
+         <AlertDefinition adapterKind="ESightAdapter" id="memoryAlertDefinitionsWarning" nameKey="902" resourceKind="memory" subType="19" type="17">
             <State severity="automatic">
                 <SymptomSet applyOn="self" operator="or">
-                    <Symptom ref="SymptomDefinitionMemory2"/>
+                    <Symptom ref="SymptomDefinitionMemoryWarning"/>
                 </SymptomSet>
                 <Impact key="health" type="badge"/>
             </State>
         </AlertDefinition>
         
-         <AlertDefinition adapterKind="ESightAdapter" id="memoryAlertDefinitions3" nameKey="121" resourceKind="memory" subType="19" type="17">
+         <AlertDefinition adapterKind="ESightAdapter" id="memoryAlertDefinitionsUnknown" nameKey="903" resourceKind="memory" subType="19" type="17">
             <State severity="automatic">
                 <SymptomSet applyOn="self" operator="or">
-                    <Symptom ref="SymptomDefinitionMemoryM2"/>
+                    <Symptom ref="SymptomDefinitionMemoryUnkown"/>
+                </SymptomSet>
+                <Impact key="health" type="badge"/>
+            </State>
+        </AlertDefinition>
+        
+         <AlertDefinition adapterKind="ESightAdapter" id="memoryAlertDefinitionsImmediate" nameKey="904" resourceKind="memory" subType="19" type="17">
+            <State severity="automatic">
+                <SymptomSet applyOn="self" operator="or">
+                    <Symptom ref="SymptomDefinitionMemoryImmediate"/>
+                </SymptomSet>
+                <Impact key="health" type="badge"/>
+            </State>
+        </AlertDefinition>
+
+        <AlertDefinition adapterKind="ESightAdapter" id="memoryAlertDefinitionsCritical" nameKey="905" resourceKind="memory" subType="19" type="17">
+            <State severity="automatic">
+                <SymptomSet applyOn="self" operator="or">
+                    <Symptom ref="SymptomDefinitionMemoryCritical"/>
+                </SymptomSet>
+                <Impact key="health" type="badge"/>
+            </State>
+        </AlertDefinition>
+        
+        <!-- memory group -->
+        <AlertDefinition adapterKind="ESightAdapter" id="memoryGroupAlertDefinitionsInfo" nameKey="901" resourceKind="memoryGroup" subType="19" type="17">
+            <State severity="automatic">
+                <SymptomSet applyOn="self" operator="or">
+                    <Symptom ref="SymptomDefinitionMemoryGroupInfo"/>
+                </SymptomSet>
+                <Impact key="health" type="badge"/>
+            </State>
+        </AlertDefinition>
+        
+         <AlertDefinition adapterKind="ESightAdapter" id="memoryGroupAlertDefinitionsWarning" nameKey="902" resourceKind="memoryGroup" subType="19" type="17">
+            <State severity="automatic">
+                <SymptomSet applyOn="self" operator="or">
+                    <Symptom ref="SymptomDefinitionMemoryGroupWarning"/>
+                </SymptomSet>
+                <Impact key="health" type="badge"/>
+            </State>
+        </AlertDefinition>
+        
+         <AlertDefinition adapterKind="ESightAdapter" id="memoryGroupAlertDefinitionsUnknown" nameKey="903" resourceKind="memoryGroup" subType="19" type="17">
+            <State severity="automatic">
+                <SymptomSet applyOn="self" operator="or">
+                    <Symptom ref="SymptomDefinitionMemoryGroupUnkown"/>
+                </SymptomSet>
+                <Impact key="health" type="badge"/>
+            </State>
+        </AlertDefinition>
+        
+         <AlertDefinition adapterKind="ESightAdapter" id="memoryGroupAlertDefinitionsImmediate" nameKey="904" resourceKind="memoryGroup" subType="19" type="17">
+            <State severity="automatic">
+                <SymptomSet applyOn="self" operator="or">
+                    <Symptom ref="SymptomDefinitionMemoryGroupImmediate"/>
+                </SymptomSet>
+                <Impact key="health" type="badge"/>
+            </State>
+        </AlertDefinition>
+
+        <AlertDefinition adapterKind="ESightAdapter" id="memoryGroupAlertDefinitionsCritical" nameKey="905" resourceKind="memoryGroup" subType="19" type="17">
+            <State severity="automatic">
+                <SymptomSet applyOn="self" operator="or">
+                    <Symptom ref="SymptomDefinitionMemoryGroupCritical"/>
                 </SymptomSet>
                 <Impact key="health" type="badge"/>
             </State>
         </AlertDefinition>
               
         <!-- fan -->
-        <AlertDefinition adapterKind="ESightAdapter" id="fanAlertDefinitions1" nameKey="86" resourceKind="fan" subType="19" type="17">
+        <AlertDefinition adapterKind="ESightAdapter" id="fanAlertDefinitionsInfo" nameKey="601" resourceKind="fan" subType="19" type="17">
             <State severity="automatic">
                 <SymptomSet applyOn="self" operator="or">
-                    <Symptom ref="SymptomDefinitionFan1"/>
-                </SymptomSet>
-                <Impact key="health" type="badge"/>
-                <!-- <Recommendations>
-          <Recommendation ref="cleanupVolume" priority="1"/>
-          <Recommendation ref="increaseVolumeCapacity" priority="2"/>
-        </Recommendations> -->
-            </State>
-        </AlertDefinition>
-        
-        <AlertDefinition adapterKind="ESightAdapter" id="fanAlertDefinitions2" nameKey="108" resourceKind="fan" subType="19" type="17">
-            <State severity="automatic">
-                <SymptomSet applyOn="self" operator="or">
-                    <Symptom ref="SymptomDefinitionFan2"/>
+                    <Symptom ref="SymptomDefinitionFanInfo"/>
                 </SymptomSet>
                 <Impact key="health" type="badge"/>
             </State>
         </AlertDefinition>
         
-        <AlertDefinition adapterKind="ESightAdapter" id="fanAlertDefinitions3" nameKey="109" resourceKind="fan" subType="19" type="17">
+         <AlertDefinition adapterKind="ESightAdapter" id="fanAlertDefinitionsWarning" nameKey="602" resourceKind="fan" subType="19" type="17">
             <State severity="automatic">
                 <SymptomSet applyOn="self" operator="or">
-                    <Symptom ref="SymptomDefinitionFanM2"/>
+                    <Symptom ref="SymptomDefinitionFanWarning"/>
+                </SymptomSet>
+                <Impact key="health" type="badge"/>
+            </State>
+        </AlertDefinition>
+        
+         <AlertDefinition adapterKind="ESightAdapter" id="fanAlertDefinitionsUnknown" nameKey="603" resourceKind="fan" subType="19" type="17">
+            <State severity="automatic">
+                <SymptomSet applyOn="self" operator="or">
+                    <Symptom ref="SymptomDefinitionFanUnkown"/>
+                </SymptomSet>
+                <Impact key="health" type="badge"/>
+            </State>
+        </AlertDefinition>
+        
+         <AlertDefinition adapterKind="ESightAdapter" id="fanAlertDefinitionsImmediate" nameKey="604" resourceKind="fan" subType="19" type="17">
+            <State severity="automatic">
+                <SymptomSet applyOn="self" operator="or">
+                    <Symptom ref="SymptomDefinitionFanImmediate"/>
+                </SymptomSet>
+                <Impact key="health" type="badge"/>
+            </State>
+        </AlertDefinition>
+
+        <AlertDefinition adapterKind="ESightAdapter" id="fanAlertDefinitionsCritical" nameKey="605" resourceKind="fan" subType="19" type="17">
+            <State severity="automatic">
+                <SymptomSet applyOn="self" operator="or">
+                    <Symptom ref="SymptomDefinitionFanCritical"/>
+                </SymptomSet>
+                <Impact key="health" type="badge"/>
+            </State>
+        </AlertDefinition>
+                
+        <!-- fan group -->
+        <AlertDefinition adapterKind="ESightAdapter" id="fanGroupAlertDefinitionsInfo" nameKey="601" resourceKind="fanGroup" subType="19" type="17">
+            <State severity="automatic">
+                <SymptomSet applyOn="self" operator="or">
+                    <Symptom ref="SymptomDefinitionFanGroupInfo"/>
+                </SymptomSet>
+                <Impact key="health" type="badge"/>
+            </State>
+        </AlertDefinition>
+        
+         <AlertDefinition adapterKind="ESightAdapter" id="fanGroupAlertDefinitionsWarning" nameKey="602" resourceKind="fanGroup" subType="19" type="17">
+            <State severity="automatic">
+                <SymptomSet applyOn="self" operator="or">
+                    <Symptom ref="SymptomDefinitionFanGroupWarning"/>
+                </SymptomSet>
+                <Impact key="health" type="badge"/>
+            </State>
+        </AlertDefinition>
+        
+         <AlertDefinition adapterKind="ESightAdapter" id="fanGroupAlertDefinitionsUnknown" nameKey="603" resourceKind="fanGroup" subType="19" type="17">
+            <State severity="automatic">
+                <SymptomSet applyOn="self" operator="or">
+                    <Symptom ref="SymptomDefinitionFanGroupUnkown"/>
+                </SymptomSet>
+                <Impact key="health" type="badge"/>
+            </State>
+        </AlertDefinition>
+        
+         <AlertDefinition adapterKind="ESightAdapter" id="fanGroupAlertDefinitionsImmediate" nameKey="604" resourceKind="fanGroup" subType="19" type="17">
+            <State severity="automatic">
+                <SymptomSet applyOn="self" operator="or">
+                    <Symptom ref="SymptomDefinitionFanGroupImmediate"/>
+                </SymptomSet>
+                <Impact key="health" type="badge"/>
+            </State>
+        </AlertDefinition>
+
+        <AlertDefinition adapterKind="ESightAdapter" id="fanAlertDefinitionsCritical" nameKey="605" resourceKind="fanGroup" subType="19" type="17">
+            <State severity="automatic">
+                <SymptomSet applyOn="self" operator="or">
+                    <Symptom ref="SymptomDefinitionFanGroupCritical"/>
                 </SymptomSet>
                 <Impact key="health" type="badge"/>
             </State>
         </AlertDefinition>
         
          <!-- PSU -->
-        <AlertDefinition adapterKind="ESightAdapter" id="psuAlertDefinitions1" nameKey="101" resourceKind="psu" subType="19" type="17">
+        <AlertDefinition adapterKind="ESightAdapter" id="psuAlertDefinitionsInfo" nameKey="501" resourceKind="psu" subType="19" type="17">
             <State severity="automatic">
                 <SymptomSet applyOn="self" operator="or">
-                    <Symptom ref="SymptomDefinitionPsu1"/>
+                    <Symptom ref="SymptomDefinitionPsuInfo"/>
                 </SymptomSet>
                 <Impact key="health" type="badge"/>
             </State>
         </AlertDefinition>
         
-        <AlertDefinition adapterKind="ESightAdapter" id="psuAlertDefinitions2" nameKey="123" resourceKind="psu" subType="19" type="17">
+         <AlertDefinition adapterKind="ESightAdapter" id="psuAlertDefinitionsWarning" nameKey="502" resourceKind="psu" subType="19" type="17">
             <State severity="automatic">
                 <SymptomSet applyOn="self" operator="or">
-                    <Symptom ref="SymptomDefinitionPsu2"/>
+                    <Symptom ref="SymptomDefinitionPsuWarning"/>
                 </SymptomSet>
                 <Impact key="health" type="badge"/>
             </State>
         </AlertDefinition>
         
-        <AlertDefinition adapterKind="ESightAdapter" id="psuAlertDefinitions3" nameKey="124" resourceKind="psu" subType="19" type="17">
+         <AlertDefinition adapterKind="ESightAdapter" id="psuAlertDefinitionsUnknown" nameKey="503" resourceKind="psu" subType="19" type="17">
             <State severity="automatic">
                 <SymptomSet applyOn="self" operator="or">
-                    <Symptom ref="SymptomDefinitionPsuM2"/>
+                    <Symptom ref="SymptomDefinitionPsuUnkown"/>
                 </SymptomSet>
                 <Impact key="health" type="badge"/>
             </State>
         </AlertDefinition>
         
+         <AlertDefinition adapterKind="ESightAdapter" id="psuAlertDefinitionsImmediate" nameKey="504" resourceKind="psu" subType="19" type="17">
+            <State severity="automatic">
+                <SymptomSet applyOn="self" operator="or">
+                    <Symptom ref="SymptomDefinitionPsuImmediate"/>
+                </SymptomSet>
+                <Impact key="health" type="badge"/>
+            </State>
+        </AlertDefinition>
 
+        <AlertDefinition adapterKind="ESightAdapter" id="psuAlertDefinitionsCritical" nameKey="505" resourceKind="psu" subType="19" type="17">
+            <State severity="automatic">
+                <SymptomSet applyOn="self" operator="or">
+                    <Symptom ref="SymptomDefinitionPsuCritical"/>
+                </SymptomSet>
+                <Impact key="health" type="badge"/>
+            </State>
+        </AlertDefinition>        
+        
+        <!-- PSU group -->
+        <AlertDefinition adapterKind="ESightAdapter" id="psuGroupAlertDefinitionsInfo" nameKey="501" resourceKind="psuGroup" subType="19" type="17">
+            <State severity="automatic">
+                <SymptomSet applyOn="self" operator="or">
+                    <Symptom ref="SymptomDefinitionPsuGroupInfo"/>
+                </SymptomSet>
+                <Impact key="health" type="badge"/>
+            </State>
+        </AlertDefinition>
+        
+         <AlertDefinition adapterKind="ESightAdapter" id="psuGroupAlertDefinitionsWarning" nameKey="502" resourceKind="psuGroup" subType="19" type="17">
+            <State severity="automatic">
+                <SymptomSet applyOn="self" operator="or">
+                    <Symptom ref="SymptomDefinitionPsuGroupWarning"/>
+                </SymptomSet>
+                <Impact key="health" type="badge"/>
+            </State>
+        </AlertDefinition>
+        
+         <AlertDefinition adapterKind="ESightAdapter" id="psuGroupAlertDefinitionsUnknown" nameKey="503" resourceKind="psuGroup" subType="19" type="17">
+            <State severity="automatic">
+                <SymptomSet applyOn="self" operator="or">
+                    <Symptom ref="SymptomDefinitionPsuGroupUnkown"/>
+                </SymptomSet>
+                <Impact key="health" type="badge"/>
+            </State>
+        </AlertDefinition>
+        
+         <AlertDefinition adapterKind="ESightAdapter" id="psuGroupAlertDefinitionsImmediate" nameKey="504" resourceKind="psuGroup" subType="19" type="17">
+            <State severity="automatic">
+                <SymptomSet applyOn="self" operator="or">
+                    <Symptom ref="SymptomDefinitionPsuGroupImmediate"/>
+                </SymptomSet>
+                <Impact key="health" type="badge"/>
+            </State>
+        </AlertDefinition>
+
+        <AlertDefinition adapterKind="ESightAdapter" id="psuGroupAlertDefinitionsCritical" nameKey="505" resourceKind="psuGroup" subType="19" type="17">
+            <State severity="automatic">
+                <SymptomSet applyOn="self" operator="or">
+                    <Symptom ref="SymptomDefinitionPsuGroupCritical"/>
+                </SymptomSet>
+                <Impact key="health" type="badge"/>
+            </State>
+        </AlertDefinition>  
         
         <!-- disk -->
-         <AlertDefinition adapterKind="ESightAdapter" id="diskAlertDefinitions1" nameKey="102" resourceKind="disk" subType="19" type="17">
+        <AlertDefinition adapterKind="ESightAdapter" id="diskAlertDefinitionsInfo" nameKey="401" resourceKind="disk" subType="19" type="17">
             <State severity="automatic">
                 <SymptomSet applyOn="self" operator="or">
-                    <Symptom ref="SymptomDefinitionDisk1"/>
+                    <Symptom ref="SymptomDefinitionDiskInfo"/>
                 </SymptomSet>
                 <Impact key="health" type="badge"/>
             </State>
         </AlertDefinition>
         
-         <AlertDefinition adapterKind="ESightAdapter" id="diskAlertDefinitions2" nameKey="126" resourceKind="disk" subType="19" type="17">
+         <AlertDefinition adapterKind="ESightAdapter" id="diskAlertDefinitionsWarning" nameKey="402" resourceKind="disk" subType="19" type="17">
             <State severity="automatic">
                 <SymptomSet applyOn="self" operator="or">
-                    <Symptom ref="SymptomDefinitionDisk2"/>
+                    <Symptom ref="SymptomDefinitionDiskWarning"/>
                 </SymptomSet>
                 <Impact key="health" type="badge"/>
             </State>
         </AlertDefinition>
         
-         <AlertDefinition adapterKind="ESightAdapter" id="diskAlertDefinitions3" nameKey="127" resourceKind="disk" subType="19" type="17">
+         <AlertDefinition adapterKind="ESightAdapter" id="diskAlertDefinitionsUnknown" nameKey="403" resourceKind="disk" subType="19" type="17">
             <State severity="automatic">
                 <SymptomSet applyOn="self" operator="or">
-                    <Symptom ref="SymptomDefinitionDiskM2"/>
+                    <Symptom ref="SymptomDefinitionDiskUnkown"/>
+                </SymptomSet>
+                <Impact key="health" type="badge"/>
+            </State>
+        </AlertDefinition>
+        
+         <AlertDefinition adapterKind="ESightAdapter" id="diskAlertDefinitionsImmediate" nameKey="404" resourceKind="disk" subType="19" type="17">
+            <State severity="automatic">
+                <SymptomSet applyOn="self" operator="or">
+                    <Symptom ref="SymptomDefinitionDiskImmediate"/>
+                </SymptomSet>
+                <Impact key="health" type="badge"/>
+            </State>
+        </AlertDefinition>
+
+        <AlertDefinition adapterKind="ESightAdapter" id="diskAlertDefinitionsCritical" nameKey="405" resourceKind="disk" subType="19" type="17">
+            <State severity="automatic">
+                <SymptomSet applyOn="self" operator="or">
+                    <Symptom ref="SymptomDefinitionDiskCritical"/>
+                </SymptomSet>
+                <Impact key="health" type="badge"/>
+            </State>
+        </AlertDefinition>        
+        
+        
+        <!-- disk group -->
+        <AlertDefinition adapterKind="ESightAdapter" id="diskGroupAlertDefinitionsInfo" nameKey="401" resourceKind="diskGroup" subType="19" type="17">
+            <State severity="automatic">
+                <SymptomSet applyOn="self" operator="or">
+                    <Symptom ref="SymptomDefinitionDiskGroupInfo"/>
+                </SymptomSet>
+                <Impact key="health" type="badge"/>
+            </State>
+        </AlertDefinition>
+        
+         <AlertDefinition adapterKind="ESightAdapter" id="diskGroupAlertDefinitionsWarning" nameKey="402" resourceKind="diskGroup" subType="19" type="17">
+            <State severity="automatic">
+                <SymptomSet applyOn="self" operator="or">
+                    <Symptom ref="SymptomDefinitionDiskGroupWarning"/>
+                </SymptomSet>
+                <Impact key="health" type="badge"/>
+            </State>
+        </AlertDefinition>
+        
+         <AlertDefinition adapterKind="ESightAdapter" id="diskGroupAlertDefinitionsUnknown" nameKey="403" resourceKind="diskGroup" subType="19" type="17">
+            <State severity="automatic">
+                <SymptomSet applyOn="self" operator="or">
+                    <Symptom ref="SymptomDefinitionDiskGroupUnkown"/>
+                </SymptomSet>
+                <Impact key="health" type="badge"/>
+            </State>
+        </AlertDefinition>
+        
+         <AlertDefinition adapterKind="ESightAdapter" id="diskGroupAlertDefinitionsImmediate" nameKey="404" resourceKind="diskGroup" subType="19" type="17">
+            <State severity="automatic">
+                <SymptomSet applyOn="self" operator="or">
+                    <Symptom ref="SymptomDefinitionDiskGroupImmediate"/>
+                </SymptomSet>
+                <Impact key="health" type="badge"/>
+            </State>
+        </AlertDefinition>
+
+        <AlertDefinition adapterKind="ESightAdapter" id="diskGroupAlertDefinitionsCritical" nameKey="405" resourceKind="diskGroup" subType="19" type="17">
+            <State severity="automatic">
+                <SymptomSet applyOn="self" operator="or">
+                    <Symptom ref="SymptomDefinitionDiskGroupCritical"/>
+                </SymptomSet>
+                <Impact key="health" type="badge"/>
+            </State>
+        </AlertDefinition>        
+                        
+         <!-- server device -->
+        <AlertDefinition adapterKind="ESightAdapter" id="serverDeviceAlertDefinitionsInfo" nameKey="1001" resourceKind="serverDevice" subType="19" type="17">
+            <State severity="automatic">
+                <SymptomSet applyOn="self" operator="or">
+                    <Symptom ref="SymptomDefinitionServiceDeviceInfo"/>
+                </SymptomSet>
+                <Impact key="health" type="badge"/>
+            </State>
+        </AlertDefinition>
+        
+         <AlertDefinition adapterKind="ESightAdapter" id="serverDeviceAlertDefinitionsWarning" nameKey="1002" resourceKind="serverDevice" subType="19" type="17">
+            <State severity="automatic">
+                <SymptomSet applyOn="self" operator="or">
+                    <Symptom ref="SymptomDefinitionServiceDeviceWarning"/>
+                </SymptomSet>
+                <Impact key="health" type="badge"/>
+            </State>
+        </AlertDefinition>
+        
+         <AlertDefinition adapterKind="ESightAdapter" id="serverDeviceAlertDefinitionsUnknown" nameKey="1003" resourceKind="serverDevice" subType="19" type="17">
+            <State severity="automatic">
+                <SymptomSet applyOn="self" operator="or">
+                    <Symptom ref="SymptomDefinitionServiceDeviceUnkown"/>
+                </SymptomSet>
+                <Impact key="health" type="badge"/>
+            </State>
+        </AlertDefinition>
+        
+         <AlertDefinition adapterKind="ESightAdapter" id="serverDeviceAlertDefinitionsImmediate" nameKey="1004" resourceKind="serverDevice" subType="19" type="17">
+            <State severity="automatic">
+                <SymptomSet applyOn="self" operator="or">
+                    <Symptom ref="SymptomDefinitionServiceDeviceImmediate"/>
+                </SymptomSet>
+                <Impact key="health" type="badge"/>
+            </State>
+        </AlertDefinition>
+
+        <AlertDefinition adapterKind="ESightAdapter" id="serverDeviceAlertDefinitionsCritical" nameKey="1005" resourceKind="serverDevice" subType="19" type="17">
+            <State severity="automatic">
+                <SymptomSet applyOn="self" operator="or">
+                    <Symptom ref="SymptomDefinitionServiceDeviceCritical"/>
+                </SymptomSet>
+                <Impact key="health" type="badge"/>
+            </State>
+        </AlertDefinition>
+        
+        <!-- server device group -->
+        
+        <!-- PCIE -->
+        <AlertDefinition adapterKind="ESightAdapter" id="pcieAlertDefinitionsInfo" nameKey="1101" resourceKind="pcie" subType="19" type="17">
+            <State severity="automatic">
+                <SymptomSet applyOn="self" operator="or">
+                    <Symptom ref="SymptomDefinitionPcieInfo"/>
+                </SymptomSet>
+                <Impact key="health" type="badge"/>
+            </State>
+        </AlertDefinition>
+        
+         <AlertDefinition adapterKind="ESightAdapter" id="pcieAlertDefinitionsWarning" nameKey="1102" resourceKind="pcie" subType="19" type="17">
+            <State severity="automatic">
+                <SymptomSet applyOn="self" operator="or">
+                    <Symptom ref="SymptomDefinitionPcieWarning"/>
+                </SymptomSet>
+                <Impact key="health" type="badge"/>
+            </State>
+        </AlertDefinition>
+        
+         <AlertDefinition adapterKind="ESightAdapter" id="pcieAlertDefinitionsUnknown" nameKey="1103" resourceKind="pcie" subType="19" type="17">
+            <State severity="automatic">
+                <SymptomSet applyOn="self" operator="or">
+                    <Symptom ref="SymptomDefinitionPcieUnkown"/>
+                </SymptomSet>
+                <Impact key="health" type="badge"/>
+            </State>
+        </AlertDefinition>
+        
+         <AlertDefinition adapterKind="ESightAdapter" id="pcieAlertDefinitionsImmediate" nameKey="1104" resourceKind="pcie" subType="19" type="17">
+            <State severity="automatic">
+                <SymptomSet applyOn="self" operator="or">
+                    <Symptom ref="SymptomDefinitionPcieImmediate"/>
+                </SymptomSet>
+                <Impact key="health" type="badge"/>
+            </State>
+        </AlertDefinition>
+
+        <AlertDefinition adapterKind="ESightAdapter" id="pcieAlertDefinitionsCritical" nameKey="1105" resourceKind="pcie" subType="19" type="17">
+            <State severity="automatic">
+                <SymptomSet applyOn="self" operator="or">
+                    <Symptom ref="SymptomDefinitionPcieCritical"/>
+                </SymptomSet>
+                <Impact key="health" type="badge"/>
+            </State>
+        </AlertDefinition>  
+        
+        <!-- PCID group -->
+        <AlertDefinition adapterKind="ESightAdapter" id="pcieGroupAlertDefinitionsInfo" nameKey="1101" resourceKind="pcieGroup" subType="19" type="17">
+            <State severity="automatic">
+                <SymptomSet applyOn="self" operator="or">
+                    <Symptom ref="SymptomDefinitionPcieGroupInfo"/>
+                </SymptomSet>
+                <Impact key="health" type="badge"/>
+            </State>
+        </AlertDefinition>
+        
+         <AlertDefinition adapterKind="ESightAdapter" id="pcieGroupAlertDefinitionsWarning" nameKey="1102" resourceKind="pcieGroup" subType="19" type="17">
+            <State severity="automatic">
+                <SymptomSet applyOn="self" operator="or">
+                    <Symptom ref="SymptomDefinitionPcieGroupWarning"/>
+                </SymptomSet>
+                <Impact key="health" type="badge"/>
+            </State>
+        </AlertDefinition>
+        
+         <AlertDefinition adapterKind="ESightAdapter" id="pcieGroupAlertDefinitionsUnknown" nameKey="1103" resourceKind="pcieGroup" subType="19" type="17">
+            <State severity="automatic">
+                <SymptomSet applyOn="self" operator="or">
+                    <Symptom ref="SymptomDefinitionPcieGroupUnkown"/>
+                </SymptomSet>
+                <Impact key="health" type="badge"/>
+            </State>
+        </AlertDefinition>
+        
+         <AlertDefinition adapterKind="ESightAdapter" id="pcieGroupAlertDefinitionsImmediate" nameKey="1104" resourceKind="pcieGroup" subType="19" type="17">
+            <State severity="automatic">
+                <SymptomSet applyOn="self" operator="or">
+                    <Symptom ref="SymptomDefinitionPcieGroupImmediate"/>
+                </SymptomSet>
+                <Impact key="health" type="badge"/>
+            </State>
+        </AlertDefinition>
+
+        <AlertDefinition adapterKind="ESightAdapter" id="pcieGroupAlertDefinitionsCritical" nameKey="1105" resourceKind="pcieGroup" subType="19" type="17">
+            <State severity="automatic">
+                <SymptomSet applyOn="self" operator="or">
+                    <Symptom ref="SymptomDefinitionPcieGroupCritical"/>
+                </SymptomSet>
+                <Impact key="health" type="badge"/>
+            </State>
+        </AlertDefinition>
+        
+        
+        <!-- RAID -->
+        <AlertDefinition adapterKind="ESightAdapter" id="raidAlertDefinitionsInfo" nameKey="1201" resourceKind="raid" subType="19" type="17">
+            <State severity="automatic">
+                <SymptomSet applyOn="self" operator="or">
+                    <Symptom ref="SymptomDefinitionRaidInfo"/>
+                </SymptomSet>
+                <Impact key="health" type="badge"/>
+            </State>
+        </AlertDefinition>
+        
+         <AlertDefinition adapterKind="ESightAdapter" id="raidAlertDefinitionsWarning" nameKey="1202" resourceKind="raid" subType="19" type="17">
+            <State severity="automatic">
+                <SymptomSet applyOn="self" operator="or">
+                    <Symptom ref="SymptomDefinitionRaidWarning"/>
+                </SymptomSet>
+                <Impact key="health" type="badge"/>
+            </State>
+        </AlertDefinition>
+        
+         <AlertDefinition adapterKind="ESightAdapter" id="raidAlertDefinitionsUnknown" nameKey="1203" resourceKind="raid" subType="19" type="17">
+            <State severity="automatic">
+                <SymptomSet applyOn="self" operator="or">
+                    <Symptom ref="SymptomDefinitionRaidUnkown"/>
+                </SymptomSet>
+                <Impact key="health" type="badge"/>
+            </State>
+        </AlertDefinition>
+        
+         <AlertDefinition adapterKind="ESightAdapter" id="raidAlertDefinitionsImmediate" nameKey="1204" resourceKind="raid" subType="19" type="17">
+            <State severity="automatic">
+                <SymptomSet applyOn="self" operator="or">
+                    <Symptom ref="SymptomDefinitionRaidImmediate"/>
+                </SymptomSet>
+                <Impact key="health" type="badge"/>
+            </State>
+        </AlertDefinition>
+
+        <AlertDefinition adapterKind="ESightAdapter" id="raidAlertDefinitionsCritical" nameKey="1205" resourceKind="raid" subType="19" type="17">
+            <State severity="automatic">
+                <SymptomSet applyOn="self" operator="or">
+                    <Symptom ref="SymptomDefinitionRaidCritical"/>
                 </SymptomSet>
                 <Impact key="health" type="badge"/>
             </State>
         </AlertDefinition>
                 
-         <!-- server device -->
-        <AlertDefinition adapterKind="ESightAdapter" id="deviceAlertDefinitions1" nameKey="103" resourceKind="serverDevice" subType="19" type="17">
+        <!-- RAID group -->
+        <AlertDefinition adapterKind="ESightAdapter" id="raidGroupAlertDefinitionsInfo" nameKey="1201" resourceKind="raidGroup" subType="19" type="17">
             <State severity="automatic">
                 <SymptomSet applyOn="self" operator="or">
-                    <Symptom ref="SymptomDefinitionDevice1"/>
+                    <Symptom ref="SymptomDefinitionRaidGroupInfo"/>
                 </SymptomSet>
                 <Impact key="health" type="badge"/>
             </State>
         </AlertDefinition>
         
-         <AlertDefinition adapterKind="ESightAdapter" id="deviceAlertDefinitions2" nameKey="129" resourceKind="serverDevice" subType="19" type="17">
+         <AlertDefinition adapterKind="ESightAdapter" id="raidGroupAlertDefinitionsWarning" nameKey="1202" resourceKind="raidGroup" subType="19" type="17">
             <State severity="automatic">
                 <SymptomSet applyOn="self" operator="or">
-                    <Symptom ref="SymptomDefinitionDevice2"/>
+                    <Symptom ref="SymptomDefinitionRaidGroupWarning"/>
                 </SymptomSet>
                 <Impact key="health" type="badge"/>
             </State>
         </AlertDefinition>
         
-         <AlertDefinition adapterKind="ESightAdapter" id="deviceAlertDefinitions3" nameKey="130" resourceKind="serverDevice" subType="19" type="17">
+         <AlertDefinition adapterKind="ESightAdapter" id="raidGroupAlertDefinitionsUnknown" nameKey="1203" resourceKind="raidGroup" subType="19" type="17">
             <State severity="automatic">
                 <SymptomSet applyOn="self" operator="or">
-                    <Symptom ref="SymptomDefinitionDeviceM2"/>
+                    <Symptom ref="SymptomDefinitionRaidGroupUnkown"/>
                 </SymptomSet>
                 <Impact key="health" type="badge"/>
             </State>
         </AlertDefinition>
         
-        
-        <!-- PCIE -->
-         <AlertDefinition adapterKind="ESightAdapter" id="pcieAlertDefinitions1" nameKey="190" resourceKind="pcie" subType="19" type="17">
+         <AlertDefinition adapterKind="ESightAdapter" id="raidAlertDefinitionsImmediate" nameKey="1204" resourceKind="raidGroup" subType="19" type="17">
             <State severity="automatic">
                 <SymptomSet applyOn="self" operator="or">
-                    <Symptom ref="SymptomDefinitionPcie1"/>
-                </SymptomSet>
-                <Impact key="health" type="badge"/>
-            </State>
-        </AlertDefinition>
-        
-         <AlertDefinition adapterKind="ESightAdapter" id="pcieAlertDefinitions2" nameKey="191" resourceKind="pcie" subType="19" type="17">
-            <State severity="automatic">
-                <SymptomSet applyOn="self" operator="or">
-                    <Symptom ref="SymptomDefinitionPcie2"/>
-                </SymptomSet>
-                <Impact key="health" type="badge"/>
-            </State>
-        </AlertDefinition>
-        
-         <AlertDefinition adapterKind="ESightAdapter" id="pcieAlertDefinitions3" nameKey="192" resourceKind="pcie" subType="19" type="17">
-            <State severity="automatic">
-                <SymptomSet applyOn="self" operator="or">
-                    <Symptom ref="SymptomDefinitionPcieM2"/>
-                </SymptomSet>
-                <Impact key="health" type="badge"/>
-            </State>
-        </AlertDefinition>
-        
-        <!-- RAID -->
-        <AlertDefinition adapterKind="ESightAdapter" id="raidAlertDefinitions1" nameKey="198" resourceKind="raid" subType="19" type="17">
-            <State severity="automatic">
-                <SymptomSet applyOn="self" operator="or">
-                    <Symptom ref="SymptomDefinitionRaid1"/>
-                </SymptomSet>
-                <Impact key="health" type="badge"/>
-            </State>
-        </AlertDefinition>
-        
-         <AlertDefinition adapterKind="ESightAdapter" id="raidAlertDefinitions2" nameKey="199" resourceKind="raid" subType="19" type="17">
-            <State severity="automatic">
-                <SymptomSet applyOn="self" operator="or">
-                    <Symptom ref="SymptomDefinitionRaid2"/>
-                </SymptomSet>
-                <Impact key="health" type="badge"/>
-            </State>
-        </AlertDefinition>
-        
-         <AlertDefinition adapterKind="ESightAdapter" id="raidAlertDefinitions3" nameKey="300" resourceKind="raid" subType="19" type="17">
-            <State severity="automatic">
-                <SymptomSet applyOn="self" operator="or">
-                    <Symptom ref="SymptomDefinitionRaidM2"/>
-                </SymptomSet>
-                <Impact key="health" type="badge"/>
-            </State>
-        </AlertDefinition>
-        
-        <!-- Mezz -->
-        <AlertDefinition adapterKind="ESightAdapter" id="mezzAlertDefinitions1" nameKey="301" resourceKind="mezz" subType="19" type="17">
-            <State severity="automatic">
-                <SymptomSet applyOn="self" operator="or">
-                    <Symptom ref="SymptomDefinitionMezz1"/>
-                </SymptomSet>
-                <Impact key="health" type="badge"/>
-            </State>
-        </AlertDefinition>
-        
-         <AlertDefinition adapterKind="ESightAdapter" id="mezzAlertDefinitions2" nameKey="302" resourceKind="mezz" subType="19" type="17">
-            <State severity="automatic">
-                <SymptomSet applyOn="self" operator="or">
-                    <Symptom ref="SymptomDefinitionMezz2"/>
-                </SymptomSet>
-                <Impact key="health" type="badge"/>
-            </State>
-        </AlertDefinition>
-        
-         <AlertDefinition adapterKind="ESightAdapter" id="mezzAlertDefinitions3" nameKey="303" resourceKind="mezz" subType="19" type="17">
-            <State severity="automatic">
-                <SymptomSet applyOn="self" operator="or">
-                    <Symptom ref="SymptomDefinitionMezzM2"/>
+                    <Symptom ref="SymptomDefinitionRaidGroupImmediate"/>
                 </SymptomSet>
                 <Impact key="health" type="badge"/>
             </State>
         </AlertDefinition>
 
+        <AlertDefinition adapterKind="ESightAdapter" id="raidGroupAlertDefinitionsCritical" nameKey="1205" resourceKind="raidGroup" subType="19" type="17">
+            <State severity="automatic">
+                <SymptomSet applyOn="self" operator="or">
+                    <Symptom ref="SymptomDefinitionRaidGroupCritical"/>
+                </SymptomSet>
+                <Impact key="health" type="badge"/>
+            </State>
+        </AlertDefinition>
+                
+        <!-- Mezz -->
+        <AlertDefinition adapterKind="ESightAdapter" id="mezzAlertDefinitionsInfo" nameKey="1301" resourceKind="mezz" subType="19" type="17">
+            <State severity="automatic">
+                <SymptomSet applyOn="self" operator="or">
+                    <Symptom ref="SymptomDefinitionMezzInfo"/>
+                </SymptomSet>
+                <Impact key="health" type="badge"/>
+            </State>
+        </AlertDefinition>
+        
+         <AlertDefinition adapterKind="ESightAdapter" id="mezzAlertDefinitionsWarning" nameKey="1302" resourceKind="mezz" subType="19" type="17">
+            <State severity="automatic">
+                <SymptomSet applyOn="self" operator="or">
+                    <Symptom ref="SymptomDefinitionMezzWarning"/>
+                </SymptomSet>
+                <Impact key="health" type="badge"/>
+            </State>
+        </AlertDefinition>
+        
+         <AlertDefinition adapterKind="ESightAdapter" id="mezzAlertDefinitionsUnknown" nameKey="1303" resourceKind="mezz" subType="19" type="17">
+            <State severity="automatic">
+                <SymptomSet applyOn="self" operator="or">
+                    <Symptom ref="SymptomDefinitionMezzUnkown"/>
+                </SymptomSet>
+                <Impact key="health" type="badge"/>
+            </State>
+        </AlertDefinition>
+        
+         <AlertDefinition adapterKind="ESightAdapter" id="mezzAlertDefinitionsImmediate" nameKey="1304" resourceKind="mezz" subType="19" type="17">
+            <State severity="automatic">
+                <SymptomSet applyOn="self" operator="or">
+                    <Symptom ref="SymptomDefinitionMezzImmediate"/>
+                </SymptomSet>
+                <Impact key="health" type="badge"/>
+            </State>
+        </AlertDefinition>
+
+        <AlertDefinition adapterKind="ESightAdapter" id="mezzAlertDefinitionsCritical" nameKey="1305" resourceKind="mezz" subType="19" type="17">
+            <State severity="automatic">
+                <SymptomSet applyOn="self" operator="or">
+                    <Symptom ref="SymptomDefinitionMezzCritical"/>
+                </SymptomSet>
+                <Impact key="health" type="badge"/>
+            </State>
+        </AlertDefinition>
+                
+        <!-- Mezz group -->
+        <AlertDefinition adapterKind="ESightAdapter" id="mezzGroupAlertDefinitionsInfo" nameKey="1301" resourceKind="mezzGroup" subType="19" type="17">
+            <State severity="automatic">
+                <SymptomSet applyOn="self" operator="or">
+                    <Symptom ref="SymptomDefinitionMezzGroupInfo"/>
+                </SymptomSet>
+                <Impact key="health" type="badge"/>
+            </State>
+        </AlertDefinition>
+        
+         <AlertDefinition adapterKind="ESightAdapter" id="mezzGroupAlertDefinitionsWarning" nameKey="1302" resourceKind="mezzGroup" subType="19" type="17">
+            <State severity="automatic">
+                <SymptomSet applyOn="self" operator="or">
+                    <Symptom ref="SymptomDefinitionMezzGroupWarning"/>
+                </SymptomSet>
+                <Impact key="health" type="badge"/>
+            </State>
+        </AlertDefinition>
+        
+         <AlertDefinition adapterKind="ESightAdapter" id="mezzGroupAlertDefinitionsUnknown" nameKey="1303" resourceKind="mezzGroup" subType="19" type="17">
+            <State severity="automatic">
+                <SymptomSet applyOn="self" operator="or">
+                    <Symptom ref="SymptomDefinitionMezzGroupUnkown"/>
+                </SymptomSet>
+                <Impact key="health" type="badge"/>
+            </State>
+        </AlertDefinition>
+        
+         <AlertDefinition adapterKind="ESightAdapter" id="mezzGroupAlertDefinitionsImmediate" nameKey="1304" resourceKind="mezzGroup" subType="19" type="17">
+            <State severity="automatic">
+                <SymptomSet applyOn="self" operator="or">
+                    <Symptom ref="SymptomDefinitionMezzGroupImmediate"/>
+                </SymptomSet>
+                <Impact key="health" type="badge"/>
+            </State>
+        </AlertDefinition>
+
+        <AlertDefinition adapterKind="ESightAdapter" id="mezzGroupAlertDefinitionsCritical" nameKey="1305" resourceKind="mezzGroup" subType="19" type="17">
+            <State severity="automatic">
+                <SymptomSet applyOn="self" operator="or">
+                    <Symptom ref="SymptomDefinitionMezzGroupCritical"/>
+                </SymptomSet>
+                <Impact key="health" type="badge"/>
+            </State>
+        </AlertDefinition>        
         
     </AlertDefinitions>
     
@@ -583,213 +1183,615 @@
         </SymptomDefinition>
     
       <!-- CPU -->
-       <SymptomDefinition adapterKind="ESightAdapter" cancelCycle="1" id="SymptomDefinitionCpu1" nameKey="78" resourceKind="cpu" waitCycle="1">
-            <State severity="warning">
-            <!-- 
-                <Condition key="healthState" operator="==" thresholdType="static" type="metric" value="-1.0" valueType="numeric"/>
-             -->
-                <Condition key="healthState" operator="==" thresholdType="static" type="metric" value="Offline" valueType="string"/>
+      
+        <SymptomDefinition adapterKind="ESightAdapter" cancelCycle="1" id="SymptomDefinitionCpuInfo" nameKey="701" resourceKind="cpu" waitCycle="1">
+            <State severity="info">
+                <Condition key="healthState" operator="==" thresholdType="static" type="metric" value="OK" valueType="string"/>
             </State>
         </SymptomDefinition>
-        <SymptomDefinition adapterKind="ESightAdapter" cancelCycle="1" id="SymptomDefinitionCpu2" nameKey="73" resourceKind="cpu" waitCycle="1">
+      
+        <SymptomDefinition adapterKind="ESightAdapter" cancelCycle="1" id="SymptomDefinitionCpuWarning" nameKey="702" resourceKind="cpu" waitCycle="1">
             <State severity="warning">
-            <!-- 
-                <Condition key="healthState" operator="==" thresholdType="static" type="metric" value="-2.0" valueType="numeric"/>
-             -->
+                <Condition key="healthState" operator="==" thresholdType="static" type="metric" value="Warning" valueType="string"/>
+            </State>
+        </SymptomDefinition>
+        
+        <SymptomDefinition adapterKind="ESightAdapter" cancelCycle="1" id="SymptomDefinitionCpuUnkown" nameKey="703" resourceKind="cpu" waitCycle="1">
+            <State severity="warning">
                 <Condition key="healthState" operator="==" thresholdType="static" type="metric" value="Unknown" valueType="string"/>
             </State>
         </SymptomDefinition>
         
-        <SymptomDefinition adapterKind="ESightAdapter" cancelCycle="1" id="SymptomDefinitionCpuM2" nameKey="79" resourceKind="cpu" waitCycle="1">
-            <State severity="critical">
-                <Condition key="healthState" operator="==" thresholdType="static" type="metric" value="Faulty" valueType="string"/>
-            <!-- 
-                <Condition key="healthState" operator="&lt;" thresholdType="static" type="metric" value="-2.0" valueType="numeric"/>
-             -->
+        <SymptomDefinition adapterKind="ESightAdapter" cancelCycle="1" id="SymptomDefinitionCpuImmediate" nameKey="704" resourceKind="cpu" waitCycle="1">
+            <State severity="immediate">
+                <Condition key="healthState" operator="==" thresholdType="static" type="metric" value="Immediate" valueType="string"/>
             </State>
         </SymptomDefinition>
         
-
+        <SymptomDefinition adapterKind="ESightAdapter" cancelCycle="1" id="SymptomDefinitionCpuCritical" nameKey="705" resourceKind="cpu" waitCycle="1">
+            <State severity="critical">
+                <Condition key="healthState" operator="==" thresholdType="static" type="metric" value="Critical" valueType="string"/>
+            </State>
+        </SymptomDefinition>
         
+       <!-- CPU group -->
+        <SymptomDefinition adapterKind="ESightAdapter" cancelCycle="1" id="SymptomDefinitionCpuGroupInfo" nameKey="701" resourceKind="cpuGroup" waitCycle="1">
+            <State severity="info">
+                <Condition key="healthState" operator="==" thresholdType="static" type="metric" value="OK" valueType="string"/>
+            </State>
+        </SymptomDefinition>
+      
+        <SymptomDefinition adapterKind="ESightAdapter" cancelCycle="1" id="SymptomDefinitionCpuGroupWarning" nameKey="702" resourceKind="cpuGroup" waitCycle="1">
+            <State severity="warning">
+                <Condition key="healthState" operator="==" thresholdType="static" type="metric" value="Warning" valueType="string"/>
+            </State>
+        </SymptomDefinition>
+        
+        <SymptomDefinition adapterKind="ESightAdapter" cancelCycle="1" id="SymptomDefinitionCpuGroupUnkown" nameKey="703" resourceKind="cpuGroup" waitCycle="1">
+            <State severity="warning">
+                <Condition key="healthState" operator="==" thresholdType="static" type="metric" value="Unknown" valueType="string"/>
+            </State>
+        </SymptomDefinition>
+        
+        <SymptomDefinition adapterKind="ESightAdapter" cancelCycle="1" id="SymptomDefinitionCpuGroupImmediate" nameKey="704" resourceKind="cpuGroup" waitCycle="1">
+            <State severity="immediate">
+                <Condition key="healthState" operator="==" thresholdType="static" type="metric" value="Immediate" valueType="string"/>
+            </State>
+        </SymptomDefinition>
+        
+        <SymptomDefinition adapterKind="ESightAdapter" cancelCycle="1" id="SymptomDefinitionCpuGroupCritical" nameKey="705" resourceKind="cpuGroup" waitCycle="1">
+            <State severity="critical">
+                <Condition key="healthState" operator="==" thresholdType="static" type="metric" value="Critical" valueType="string"/>
+            </State>
+        </SymptomDefinition>        
+                    
          <!-- board -->
-        <SymptomDefinition adapterKind="ESightAdapter" id="SymptomDefinitionBoard1" nameKey="75" resourceKind="board">
-            <State severity="warning">
-            <!-- 
-                <Condition key="healthState" operator="==" thresholdType="static" type="metric" value="-1.0" valueType="numeric"/>
-             -->
-                <Condition key="healthState" operator="==" thresholdType="static" type="metric" value="Offline" valueType="string"/>
+        <SymptomDefinition adapterKind="ESightAdapter" cancelCycle="1" id="SymptomDefinitionBoardInfo" nameKey="801" resourceKind="board" waitCycle="1">
+            <State severity="info">
+                <Condition key="healthState" operator="==" thresholdType="static" type="metric" value="OK" valueType="string"/>
             </State>
         </SymptomDefinition>
-        <SymptomDefinition adapterKind="ESightAdapter" cancelCycle="1" id="SymptomDefinitionBoard2" nameKey="77" resourceKind="board" waitCycle="1">
+      
+        <SymptomDefinition adapterKind="ESightAdapter" cancelCycle="1" id="SymptomDefinitionBoardWarning" nameKey="802" resourceKind="board" waitCycle="1">
             <State severity="warning">
-            <!-- 
-                <Condition key="healthState" operator="==" thresholdType="static" type="metric" value="-2.0" valueType="numeric"/>
-             -->
+                <Condition key="healthState" operator="==" thresholdType="static" type="metric" value="Warning" valueType="string"/>
+            </State>
+        </SymptomDefinition>
+        
+        <SymptomDefinition adapterKind="ESightAdapter" cancelCycle="1" id="SymptomDefinitionBoardUnkown" nameKey="803" resourceKind="board" waitCycle="1">
+            <State severity="warning">
                 <Condition key="healthState" operator="==" thresholdType="static" type="metric" value="Unknown" valueType="string"/>
             </State>
         </SymptomDefinition>
         
-        <SymptomDefinition adapterKind="ESightAdapter" cancelCycle="1" id="SymptomDefinitionBoardM2" nameKey="92" resourceKind="board" waitCycle="1">
-            <State severity="critical">
-            <!-- 
-                <Condition key="healthState" operator="&lt;" thresholdType="static" type="metric" value="-2.0" valueType="numeric"/>
-             -->
-                <Condition key="healthState" operator="==" thresholdType="static" type="metric" value="Faulty" valueType="string"/>
+        <SymptomDefinition adapterKind="ESightAdapter" cancelCycle="1" id="SymptomDefinitionBoardImmediate" nameKey="804" resourceKind="board" waitCycle="1">
+            <State severity="immediate">
+                <Condition key="healthState" operator="==" thresholdType="static" type="metric" value="Immediate" valueType="string"/>
             </State>
         </SymptomDefinition>
         
-         
+        <SymptomDefinition adapterKind="ESightAdapter" cancelCycle="1" id="SymptomDefinitionBoardCritical" nameKey="805" resourceKind="board" waitCycle="1">
+            <State severity="critical">
+                <Condition key="healthState" operator="==" thresholdType="static" type="metric" value="Critical" valueType="string"/>
+            </State>
+        </SymptomDefinition>		
+        
+        <!-- board group -->
+        <SymptomDefinition adapterKind="ESightAdapter" cancelCycle="1" id="SymptomDefinitionBoardGroupInfo" nameKey="801" resourceKind="boardGroup" waitCycle="1">
+            <State severity="info">
+                <Condition key="healthState" operator="==" thresholdType="static" type="metric" value="OK" valueType="string"/>
+            </State>
+        </SymptomDefinition>
+      
+        <SymptomDefinition adapterKind="ESightAdapter" cancelCycle="1" id="SymptomDefinitionBoardGroupWarning" nameKey="802" resourceKind="boardGroup" waitCycle="1">
+            <State severity="warning">
+                <Condition key="healthState" operator="==" thresholdType="static" type="metric" value="Warning" valueType="string"/>
+            </State>
+        </SymptomDefinition>
+        
+        <SymptomDefinition adapterKind="ESightAdapter" cancelCycle="1" id="SymptomDefinitionBoardGroupUnkown" nameKey="803" resourceKind="boardGroup" waitCycle="1">
+            <State severity="warning">
+                <Condition key="healthState" operator="==" thresholdType="static" type="metric" value="Unknown" valueType="string"/>
+            </State>
+        </SymptomDefinition>
+        
+        <SymptomDefinition adapterKind="ESightAdapter" cancelCycle="1" id="SymptomDefinitionBoardGroupImmediate" nameKey="804" resourceKind="boardGroup" waitCycle="1">
+            <State severity="immediate">
+                <Condition key="healthState" operator="==" thresholdType="static" type="metric" value="Immediate" valueType="string"/>
+            </State>
+        </SymptomDefinition>
+        
+        <SymptomDefinition adapterKind="ESightAdapter" cancelCycle="1" id="SymptomDefinitionBoardGroupCritical" nameKey="805" resourceKind="boardGroup" waitCycle="1">
+            <State severity="critical">
+                <Condition key="healthState" operator="==" thresholdType="static" type="metric" value="Critical" valueType="string"/>
+            </State>
+        </SymptomDefinition>         
         
          <!-- memory -->
-       <SymptomDefinition adapterKind="ESightAdapter" cancelCycle="1" id="SymptomDefinitionMemory1" nameKey="82" resourceKind="memory" waitCycle="1">
-            <State severity="warning">
-                <Condition key="healthState" operator="==" thresholdType="static" type="metric" value="Offline" valueType="string"/>
+        <SymptomDefinition adapterKind="ESightAdapter" cancelCycle="1" id="SymptomDefinitionMemoryInfo" nameKey="901" resourceKind="memory" waitCycle="1">
+            <State severity="info">
+                <Condition key="healthState" operator="==" thresholdType="static" type="metric" value="OK" valueType="string"/>
             </State>
         </SymptomDefinition>
-        <SymptomDefinition adapterKind="ESightAdapter" cancelCycle="1" id="SymptomDefinitionMemory2" nameKey="83" resourceKind="memory" waitCycle="1">
+      
+        <SymptomDefinition adapterKind="ESightAdapter" cancelCycle="1" id="SymptomDefinitionMemoryWarning" nameKey="902" resourceKind="memory" waitCycle="1">
+            <State severity="warning">
+                <Condition key="healthState" operator="==" thresholdType="static" type="metric" value="Warning" valueType="string"/>
+            </State>
+        </SymptomDefinition>
+        
+        <SymptomDefinition adapterKind="ESightAdapter" cancelCycle="1" id="SymptomDefinitionMemoryUnkown" nameKey="903" resourceKind="memory" waitCycle="1">
             <State severity="warning">
                 <Condition key="healthState" operator="==" thresholdType="static" type="metric" value="Unknown" valueType="string"/>
             </State>
         </SymptomDefinition>
         
-        <SymptomDefinition adapterKind="ESightAdapter" cancelCycle="1" id="SymptomDefinitionMemoryM2" nameKey="84" resourceKind="memory" waitCycle="1">
-            <State severity="critical">
-                <Condition key="healthState" operator="==" thresholdType="static" type="metric" value="Faulty" valueType="string"/>
+        <SymptomDefinition adapterKind="ESightAdapter" cancelCycle="1" id="SymptomDefinitionMemoryImmediate" nameKey="904" resourceKind="memory" waitCycle="1">
+            <State severity="immediate">
+                <Condition key="healthState" operator="==" thresholdType="static" type="metric" value="Immediate" valueType="string"/>
             </State>
         </SymptomDefinition>
         
-
+        <SymptomDefinition adapterKind="ESightAdapter" cancelCycle="1" id="SymptomDefinitionMemoryCritical" nameKey="905" resourceKind="memory" waitCycle="1">
+            <State severity="critical">
+                <Condition key="healthState" operator="==" thresholdType="static" type="metric" value="Critical" valueType="string"/>
+            </State>
+        </SymptomDefinition>		
         
+        <!-- memory group -->
+       <SymptomDefinition adapterKind="ESightAdapter" cancelCycle="1" id="SymptomDefinitionMemoryGroup1" nameKey="82" resourceKind="memoryGroup" waitCycle="1">
+            <State severity="warning">
+                <Condition key="healthState" operator="==" thresholdType="static" type="metric" value="Offline" valueType="string"/>
+            </State>
+        </SymptomDefinition>
+        
+        <SymptomDefinition adapterKind="ESightAdapter" cancelCycle="1" id="SymptomDefinitionMemoryGroup2" nameKey="83" resourceKind="memoryGroup" waitCycle="1">
+            <State severity="warning">
+                <Condition key="healthState" operator="==" thresholdType="static" type="metric" value="Unknown" valueType="string"/>
+            </State>
+        </SymptomDefinition>
+        
+        <SymptomDefinition adapterKind="ESightAdapter" cancelCycle="1" id="SymptomDefinitionMemoryGroupM2" nameKey="84" resourceKind="memoryGroup" waitCycle="1">
+            <State severity="critical">
+                <Condition key="healthState" operator="==" thresholdType="static" type="metric" value="Faulty" valueType="string"/>
+            </State>
+        </SymptomDefinition>        
+
+        <SymptomDefinition adapterKind="ESightAdapter" cancelCycle="1" id="SymptomDefinitionMemoryGroupInfo" nameKey="901" resourceKind="memoryGroup" waitCycle="1">
+            <State severity="info">
+                <Condition key="healthState" operator="==" thresholdType="static" type="metric" value="OK" valueType="string"/>
+            </State>
+        </SymptomDefinition>
+      
+        <SymptomDefinition adapterKind="ESightAdapter" cancelCycle="1" id="SymptomDefinitionMemoryGroupWarning" nameKey="902" resourceKind="memoryGroup" waitCycle="1">
+            <State severity="warning">
+                <Condition key="healthState" operator="==" thresholdType="static" type="metric" value="Warning" valueType="string"/>
+            </State>
+        </SymptomDefinition>
+        
+        <SymptomDefinition adapterKind="ESightAdapter" cancelCycle="1" id="SymptomDefinitionMemoryGroupUnkown" nameKey="903" resourceKind="memoryGroup" waitCycle="1">
+            <State severity="warning">
+                <Condition key="healthState" operator="==" thresholdType="static" type="metric" value="Unknown" valueType="string"/>
+            </State>
+        </SymptomDefinition>
+        
+        <SymptomDefinition adapterKind="ESightAdapter" cancelCycle="1" id="SymptomDefinitionMemoryGroupImmediate" nameKey="904" resourceKind="memoryGroup" waitCycle="1">
+            <State severity="immediate">
+                <Condition key="healthState" operator="==" thresholdType="static" type="metric" value="Immediate" valueType="string"/>
+            </State>
+        </SymptomDefinition>
+        
+        <SymptomDefinition adapterKind="ESightAdapter" cancelCycle="1" id="SymptomDefinitionMemoryGroupCritical" nameKey="905" resourceKind="memoryGroup" waitCycle="1">
+            <State severity="critical">
+                <Condition key="healthState" operator="==" thresholdType="static" type="metric" value="Critical" valueType="string"/>
+            </State>
+        </SymptomDefinition>
+		
          <!-- fan -->
-       <SymptomDefinition adapterKind="ESightAdapter" cancelCycle="1" id="SymptomDefinitionFan1" nameKey="87" resourceKind="fan" waitCycle="1">
-            <State severity="warning">
-                <Condition key="healthState" operator="==" thresholdType="static" type="metric" value="Offline" valueType="string"/>
+        <SymptomDefinition adapterKind="ESightAdapter" cancelCycle="1" id="SymptomDefinitionFanInfo" nameKey="601" resourceKind="fan" waitCycle="1">
+            <State severity="info">
+                <Condition key="healthState" operator="==" thresholdType="static" type="metric" value="OK" valueType="string"/>
             </State>
         </SymptomDefinition>
-        <SymptomDefinition adapterKind="ESightAdapter" cancelCycle="1" id="SymptomDefinitionFan2" nameKey="88" resourceKind="fan" waitCycle="1">
+      
+        <SymptomDefinition adapterKind="ESightAdapter" cancelCycle="1" id="SymptomDefinitionFanWarning" nameKey="602" resourceKind="fan" waitCycle="1">
+            <State severity="warning">
+                <Condition key="healthState" operator="==" thresholdType="static" type="metric" value="Warning" valueType="string"/>
+            </State>
+        </SymptomDefinition>
+        
+        <SymptomDefinition adapterKind="ESightAdapter" cancelCycle="1" id="SymptomDefinitionFanUnkown" nameKey="603" resourceKind="fan" waitCycle="1">
             <State severity="warning">
                 <Condition key="healthState" operator="==" thresholdType="static" type="metric" value="Unknown" valueType="string"/>
             </State>
         </SymptomDefinition>
         
-        <SymptomDefinition adapterKind="ESightAdapter" cancelCycle="1" id="SymptomDefinitionFanM2" nameKey="89" resourceKind="fan" waitCycle="1">
-            <State severity="critical">
-                <Condition key="healthState" operator="==" thresholdType="static" type="metric" value="Faulty" valueType="string"/>
+        <SymptomDefinition adapterKind="ESightAdapter" cancelCycle="1" id="SymptomDefinitionFanImmediate" nameKey="604" resourceKind="fan" waitCycle="1">
+            <State severity="immediate">
+                <Condition key="healthState" operator="==" thresholdType="static" type="metric" value="Immediate" valueType="string"/>
             </State>
         </SymptomDefinition>
         
-
+        <SymptomDefinition adapterKind="ESightAdapter" cancelCycle="1" id="SymptomDefinitionFanCritical" nameKey="605" resourceKind="fan" waitCycle="1">
+            <State severity="critical">
+                <Condition key="healthState" operator="==" thresholdType="static" type="metric" value="Critical" valueType="string"/>
+            </State>
+        </SymptomDefinition>
         
+        <!-- fan group -->
+        <SymptomDefinition adapterKind="ESightAdapter" cancelCycle="1" id="SymptomDefinitionFanGroupInfo" nameKey="601" resourceKind="fanGroup" waitCycle="1">
+            <State severity="info">
+                <Condition key="healthState" operator="==" thresholdType="static" type="metric" value="OK" valueType="string"/>
+            </State>
+        </SymptomDefinition>
+      
+        <SymptomDefinition adapterKind="ESightAdapter" cancelCycle="1" id="SymptomDefinitionFanGroupWarning" nameKey="602" resourceKind="fanGroup" waitCycle="1">
+            <State severity="warning">
+                <Condition key="healthState" operator="==" thresholdType="static" type="metric" value="Warning" valueType="string"/>
+            </State>
+        </SymptomDefinition>
+        
+        <SymptomDefinition adapterKind="ESightAdapter" cancelCycle="1" id="SymptomDefinitionFanGroupUnkown" nameKey="603" resourceKind="fanGroup" waitCycle="1">
+            <State severity="warning">
+                <Condition key="healthState" operator="==" thresholdType="static" type="metric" value="Unknown" valueType="string"/>
+            </State>
+        </SymptomDefinition>
+        
+        <SymptomDefinition adapterKind="ESightAdapter" cancelCycle="1" id="SymptomDefinitionFanGroupImmediate" nameKey="604" resourceKind="fanGroup" waitCycle="1">
+            <State severity="immediate">
+                <Condition key="healthState" operator="==" thresholdType="static" type="metric" value="Immediate" valueType="string"/>
+            </State>
+        </SymptomDefinition>
+        
+        <SymptomDefinition adapterKind="ESightAdapter" cancelCycle="1" id="SymptomDefinitionFanGroupCritical" nameKey="605" resourceKind="fanGroup" waitCycle="1">
+            <State severity="critical">
+                <Condition key="healthState" operator="==" thresholdType="static" type="metric" value="Critical" valueType="string"/>
+            </State>
+        </SymptomDefinition>        
+		
          <!-- PSU -->
-       <SymptomDefinition adapterKind="ESightAdapter" cancelCycle="1" id="SymptomDefinitionPsu1" nameKey="93" resourceKind="psu" waitCycle="1">
+        <SymptomDefinition adapterKind="ESightAdapter" cancelCycle="1" id="SymptomDefinitionPsuInfo" nameKey="501" resourceKind="psu" waitCycle="1">
+            <State severity="info">
+                <Condition key="healthState" operator="==" thresholdType="static" type="metric" value="OK" valueType="string"/>
+            </State>
+        </SymptomDefinition>
+      
+        <SymptomDefinition adapterKind="ESightAdapter" cancelCycle="1" id="SymptomDefinitionPsuWarning" nameKey="502" resourceKind="psu" waitCycle="1">
             <State severity="warning">
-                <Condition key="healthState" operator="==" thresholdType="static" type="metric" value="Offline" valueType="string"/>
+                <Condition key="healthState" operator="==" thresholdType="static" type="metric" value="Warning" valueType="string"/>
             </State>
         </SymptomDefinition>
         
-        <SymptomDefinition adapterKind="ESightAdapter" cancelCycle="1" id="SymptomDefinitionPsu2" nameKey="94" resourceKind="psu" waitCycle="1">
+        <SymptomDefinition adapterKind="ESightAdapter" cancelCycle="1" id="SymptomDefinitionPsuUnkown" nameKey="503" resourceKind="psu" waitCycle="1">
             <State severity="warning">
                 <Condition key="healthState" operator="==" thresholdType="static" type="metric" value="Unknown" valueType="string"/>
             </State>
         </SymptomDefinition>
         
-        <SymptomDefinition adapterKind="ESightAdapter" cancelCycle="1" id="SymptomDefinitionPsuM2" nameKey="95" resourceKind="psu" waitCycle="1">
-            <State severity="critical">
-                <Condition key="healthState" operator="==" thresholdType="static" type="metric" value="Faulty" valueType="string"/>
+        <SymptomDefinition adapterKind="ESightAdapter" cancelCycle="1" id="SymptomDefinitionPsuImmediate" nameKey="504" resourceKind="psu" waitCycle="1">
+            <State severity="immediate">
+                <Condition key="healthState" operator="==" thresholdType="static" type="metric" value="Immediate" valueType="string"/>
             </State>
         </SymptomDefinition>
+        
+        <SymptomDefinition adapterKind="ESightAdapter" cancelCycle="1" id="SymptomDefinitionPsuCritical" nameKey="505" resourceKind="psu" waitCycle="1">
+            <State severity="critical">
+                <Condition key="healthState" operator="==" thresholdType="static" type="metric" value="Critical" valueType="string"/>
+            </State>
+        </SymptomDefinition>
+        
+        <!-- PSU group -->
+        <SymptomDefinition adapterKind="ESightAdapter" cancelCycle="1" id="SymptomDefinitionPsuGroupInfo" nameKey="501" resourceKind="psuGroup" waitCycle="1">
+            <State severity="info">
+                <Condition key="healthState" operator="==" thresholdType="static" type="metric" value="OK" valueType="string"/>
+            </State>
+        </SymptomDefinition>
+      
+        <SymptomDefinition adapterKind="ESightAdapter" cancelCycle="1" id="SymptomDefinitionPsuGroupWarning" nameKey="502" resourceKind="psuGroup" waitCycle="1">
+            <State severity="warning">
+                <Condition key="healthState" operator="==" thresholdType="static" type="metric" value="Warning" valueType="string"/>
+            </State>
+        </SymptomDefinition>
+        
+        <SymptomDefinition adapterKind="ESightAdapter" cancelCycle="1" id="SymptomDefinitionPsuGroupUnkown" nameKey="503" resourceKind="psuGroup" waitCycle="1">
+            <State severity="warning">
+                <Condition key="healthState" operator="==" thresholdType="static" type="metric" value="Unknown" valueType="string"/>
+            </State>
+        </SymptomDefinition>
+        
+        <SymptomDefinition adapterKind="ESightAdapter" cancelCycle="1" id="SymptomDefinitionPsuGroupImmediate" nameKey="504" resourceKind="psuGroup" waitCycle="1">
+            <State severity="immediate">
+                <Condition key="healthState" operator="==" thresholdType="static" type="metric" value="Immediate" valueType="string"/>
+            </State>
+        </SymptomDefinition>
+        
+        <SymptomDefinition adapterKind="ESightAdapter" cancelCycle="1" id="SymptomDefinitionPsuGroupCritical" nameKey="505" resourceKind="psuGroup" waitCycle="1">
+            <State severity="critical">
+                <Condition key="healthState" operator="==" thresholdType="static" type="metric" value="Critical" valueType="string"/>
+            </State>
+        </SymptomDefinition>		
         
          <!-- disk -->
-       <SymptomDefinition adapterKind="ESightAdapter" cancelCycle="1" id="SymptomDefinitionDisk1" nameKey="97" resourceKind="disk" waitCycle="1">
-            <State severity="warning">
-                <Condition key="healthState" operator="==" thresholdType="static" type="metric" value="Offline" valueType="string"/>
+        <SymptomDefinition adapterKind="ESightAdapter" cancelCycle="1" id="SymptomDefinitionDiskInfo" nameKey="401" resourceKind="disk" waitCycle="1">
+            <State severity="info">
+                <Condition key="healthState" operator="==" thresholdType="static" type="metric" value="OK" valueType="string"/>
             </State>
         </SymptomDefinition>
-        <SymptomDefinition adapterKind="ESightAdapter" cancelCycle="1" id="SymptomDefinitionDisk2" nameKey="98" resourceKind="disk" waitCycle="1">
+      
+        <SymptomDefinition adapterKind="ESightAdapter" cancelCycle="1" id="SymptomDefinitionDiskWarning" nameKey="402" resourceKind="disk" waitCycle="1">
+            <State severity="warning">
+                <Condition key="healthState" operator="==" thresholdType="static" type="metric" value="Warning" valueType="string"/>
+            </State>
+        </SymptomDefinition>
+        
+        <SymptomDefinition adapterKind="ESightAdapter" cancelCycle="1" id="SymptomDefinitionDiskUnkown" nameKey="403" resourceKind="disk" waitCycle="1">
             <State severity="warning">
                 <Condition key="healthState" operator="==" thresholdType="static" type="metric" value="Unknown" valueType="string"/>
             </State>
         </SymptomDefinition>
         
-        <SymptomDefinition adapterKind="ESightAdapter" cancelCycle="1" id="SymptomDefinitionDiskM2" nameKey="99" resourceKind="disk" waitCycle="1">
-            <State severity="critical">
-                <Condition key="healthState" operator="==" thresholdType="static" type="metric" value="Faulty" valueType="string"/>
+        <SymptomDefinition adapterKind="ESightAdapter" cancelCycle="1" id="SymptomDefinitionDiskImmediate" nameKey="404" resourceKind="disk" waitCycle="1">
+            <State severity="immediate">
+                <Condition key="healthState" operator="==" thresholdType="static" type="metric" value="Immediate" valueType="string"/>
             </State>
         </SymptomDefinition>
         
-        <!-- server devices -->
-       <SymptomDefinition adapterKind="ESightAdapter" cancelCycle="1" id="SymptomDefinitionDevice1" nameKey="104" resourceKind="serverDevice" waitCycle="1">
-            <State severity="warning">
-                <Condition key="status" operator="==" thresholdType="static" type="metric" value="Offline" valueType="string"/>
+        <SymptomDefinition adapterKind="ESightAdapter" cancelCycle="1" id="SymptomDefinitionDiskCritical" nameKey="405" resourceKind="disk" waitCycle="1">
+            <State severity="critical">
+                <Condition key="healthState" operator="==" thresholdType="static" type="metric" value="Critical" valueType="string"/>
+            </State>
+        </SymptomDefinition>		
+        
+        <!-- disk group -->
+        <SymptomDefinition adapterKind="ESightAdapter" cancelCycle="1" id="SymptomDefinitionDiskGroupInfo" nameKey="401" resourceKind="diskGroup" waitCycle="1">
+            <State severity="info">
+                <Condition key="healthState" operator="==" thresholdType="static" type="metric" value="OK" valueType="string"/>
             </State>
         </SymptomDefinition>
-        <SymptomDefinition adapterKind="ESightAdapter" cancelCycle="1" id="SymptomDefinitionDevice2" nameKey="105" resourceKind="serverDevice" waitCycle="1">
+      
+        <SymptomDefinition adapterKind="ESightAdapter" cancelCycle="1" id="SymptomDefinitionDiskGroupWarning" nameKey="402" resourceKind="diskGroup" waitCycle="1">
+            <State severity="warning">
+                <Condition key="healthState" operator="==" thresholdType="static" type="metric" value="Warning" valueType="string"/>
+            </State>
+        </SymptomDefinition>
+        
+        <SymptomDefinition adapterKind="ESightAdapter" cancelCycle="1" id="SymptomDefinitionDiskGroupUnkown" nameKey="403" resourceKind="diskGroup" waitCycle="1">
+            <State severity="warning">
+                <Condition key="healthState" operator="==" thresholdType="static" type="metric" value="Unknown" valueType="string"/>
+            </State>
+        </SymptomDefinition>
+        
+        <SymptomDefinition adapterKind="ESightAdapter" cancelCycle="1" id="SymptomDefinitionDiskGroupImmediate" nameKey="404" resourceKind="diskGroup" waitCycle="1">
+            <State severity="immediate">
+                <Condition key="healthState" operator="==" thresholdType="static" type="metric" value="Immediate" valueType="string"/>
+            </State>
+        </SymptomDefinition>
+        
+        <SymptomDefinition adapterKind="ESightAdapter" cancelCycle="1" id="SymptomDefinitionDiskGroupCritical" nameKey="405" resourceKind="diskGroup" waitCycle="1">
+            <State severity="critical">
+                <Condition key="healthState" operator="==" thresholdType="static" type="metric" value="Critical" valueType="string"/>
+            </State>
+        </SymptomDefinition>	
+        
+        <!-- server devices -->
+        <SymptomDefinition adapterKind="ESightAdapter" cancelCycle="1" id="SymptomDefinitionServiceDeviceInfo" nameKey="1001" resourceKind="serverDevice" waitCycle="1">
+            <State severity="info">
+                <Condition key="status" operator="==" thresholdType="static" type="metric" value="OK" valueType="string"/>
+            </State>
+        </SymptomDefinition>
+      
+        <SymptomDefinition adapterKind="ESightAdapter" cancelCycle="1" id="SymptomDefinitionServiceDeviceWarning" nameKey="1002" resourceKind="serverDevice" waitCycle="1">
+            <State severity="warning">
+                <Condition key="status" operator="==" thresholdType="static" type="metric" value="Warning" valueType="string"/>
+            </State>
+        </SymptomDefinition>
+        
+        <SymptomDefinition adapterKind="ESightAdapter" cancelCycle="1" id="SymptomDefinitionServiceDeviceUnkown" nameKey="1003" resourceKind="serverDevice" waitCycle="1">
             <State severity="warning">
                 <Condition key="status" operator="==" thresholdType="static" type="metric" value="Unknown" valueType="string"/>
             </State>
         </SymptomDefinition>
         
-        <SymptomDefinition adapterKind="ESightAdapter" cancelCycle="1" id="SymptomDefinitionDeviceM2" nameKey="106" resourceKind="serverDevice" waitCycle="1">
-            <State severity="critical">
-                <Condition key="status" operator="==" thresholdType="static" type="metric" value="Faulty" valueType="string"/>
+        <SymptomDefinition adapterKind="ESightAdapter" cancelCycle="1" id="SymptomDefinitionServiceDeviceImmediate" nameKey="1004" resourceKind="serverDevice" waitCycle="1">
+            <State severity="immediate">
+                <Condition key="status" operator="==" thresholdType="static" type="metric" value="Immediate" valueType="string"/>
             </State>
         </SymptomDefinition>
+        
+        <SymptomDefinition adapterKind="ESightAdapter" cancelCycle="1" id="SymptomDefinitionServiceDeviceCritical" nameKey="1005" resourceKind="serverDevice" waitCycle="1">
+            <State severity="critical">
+                <Condition key="status" operator="==" thresholdType="static" type="metric" value="Critical" valueType="string"/>
+            </State>
+        </SymptomDefinition>
+
+        <!-- server devices group -->
+       
                 
          <!-- PCIE -->
-       <SymptomDefinition adapterKind="ESightAdapter" cancelCycle="1" id="SymptomDefinitionPcie1" nameKey="194" resourceKind="pcie" waitCycle="1">
-            <State severity="warning">
-                <Condition key="pcieSsdCardHealthStatus" operator="==" thresholdType="static" type="metric" value="Offline" valueType="string"/>
+        <SymptomDefinition adapterKind="ESightAdapter" cancelCycle="1" id="SymptomDefinitionPcieInfo" nameKey="1101" resourceKind="pcie" waitCycle="1">
+            <State severity="info">
+                <Condition key="pcieSsdCardHealthStatus" operator="==" thresholdType="static" type="metric" value="OK" valueType="string"/>
             </State>
         </SymptomDefinition>
-        <SymptomDefinition adapterKind="ESightAdapter" cancelCycle="1" id="SymptomDefinitionPcie2" nameKey="195" resourceKind="pcie" waitCycle="1">
+      
+        <SymptomDefinition adapterKind="ESightAdapter" cancelCycle="1" id="SymptomDefinitionPcieWarning" nameKey="1102" resourceKind="pcie" waitCycle="1">
+            <State severity="warning">
+                <Condition key="pcieSsdCardHealthStatus" operator="==" thresholdType="static" type="metric" value="Warning" valueType="string"/>
+            </State>
+        </SymptomDefinition>
+        
+        <SymptomDefinition adapterKind="ESightAdapter" cancelCycle="1" id="SymptomDefinitionPcieUnkown" nameKey="1103" resourceKind="pcie" waitCycle="1">
             <State severity="warning">
                 <Condition key="pcieSsdCardHealthStatus" operator="==" thresholdType="static" type="metric" value="Unknown" valueType="string"/>
             </State>
         </SymptomDefinition>
         
-        <SymptomDefinition adapterKind="ESightAdapter" cancelCycle="1" id="SymptomDefinitionPcieM2" nameKey="196" resourceKind="pcie" waitCycle="1">
-            <State severity="critical">
-                <Condition key="pcieSsdCardHealthStatus" operator="==" thresholdType="static" type="metric" value="Faulty" valueType="string"/>
-            </State>
-        </SymptomDefinition>
-                
-         <!-- RAID -->
-       <SymptomDefinition adapterKind="ESightAdapter" cancelCycle="1" id="SymptomDefinitionRaid1" nameKey="202" resourceKind="raid" waitCycle="1">
-            <State severity="warning">
-                <Condition key="healthState" operator="==" thresholdType="static" type="metric" value="Offline" valueType="string"/>
+        <SymptomDefinition adapterKind="ESightAdapter" cancelCycle="1" id="SymptomDefinitionPcieImmediate" nameKey="1104" resourceKind="pcie" waitCycle="1">
+            <State severity="immediate">
+                <Condition key="pcieSsdCardHealthStatus" operator="==" thresholdType="static" type="metric" value="Immediate" valueType="string"/>
             </State>
         </SymptomDefinition>
         
-        <SymptomDefinition adapterKind="ESightAdapter" cancelCycle="1" id="SymptomDefinitionRaid2" nameKey="203" resourceKind="raid" waitCycle="1">
+        <SymptomDefinition adapterKind="ESightAdapter" cancelCycle="1" id="SymptomDefinitionPcieCritical" nameKey="1105" resourceKind="pcie" waitCycle="1">
+            <State severity="critical">
+                <Condition key="pcieSsdCardHealthStatus" operator="==" thresholdType="static" type="metric" value="Critical" valueType="string"/>
+            </State>
+        </SymptomDefinition>
+        
+        <!-- PCIE group -->
+        <SymptomDefinition adapterKind="ESightAdapter" cancelCycle="1" id="SymptomDefinitionPcieGroupInfo" nameKey="1101" resourceKind="pcieGroup" waitCycle="1">
+            <State severity="info">
+                <Condition key="pcieSsdCardHealthStatus" operator="==" thresholdType="static" type="metric" value="OK" valueType="string"/>
+            </State>
+        </SymptomDefinition>
+      
+        <SymptomDefinition adapterKind="ESightAdapter" cancelCycle="1" id="SymptomDefinitionPcieGroupWarning" nameKey="1102" resourceKind="pcieGroup" waitCycle="1">
+            <State severity="warning">
+                <Condition key="pcieSsdCardHealthStatus" operator="==" thresholdType="static" type="metric" value="Warning" valueType="string"/>
+            </State>
+        </SymptomDefinition>
+        
+        <SymptomDefinition adapterKind="ESightAdapter" cancelCycle="1" id="SymptomDefinitionPcieGroupUnkown" nameKey="1103" resourceKind="pcieGroup" waitCycle="1">
+            <State severity="warning">
+                <Condition key="pcieSsdCardHealthStatus" operator="==" thresholdType="static" type="metric" value="Unknown" valueType="string"/>
+            </State>
+        </SymptomDefinition>
+        
+        <SymptomDefinition adapterKind="ESightAdapter" cancelCycle="1" id="SymptomDefinitionPcieGroupImmediate" nameKey="1104" resourceKind="pcieGroup" waitCycle="1">
+            <State severity="immediate">
+                <Condition key="pcieSsdCardHealthStatus" operator="==" thresholdType="static" type="metric" value="Immediate" valueType="string"/>
+            </State>
+        </SymptomDefinition>
+        
+        <SymptomDefinition adapterKind="ESightAdapter" cancelCycle="1" id="SymptomDefinitionPcieGroupCritical" nameKey="1105" resourceKind="pcieGroup" waitCycle="1">
+            <State severity="critical">
+                <Condition key="pcieSsdCardHealthStatus" operator="==" thresholdType="static" type="metric" value="Critical" valueType="string"/>
+            </State>
+        </SymptomDefinition>
+                
+         <!-- RAID -->	
+        <SymptomDefinition adapterKind="ESightAdapter" cancelCycle="1" id="SymptomDefinitionRaidInfo" nameKey="1201" resourceKind="raid" waitCycle="1">
+            <State severity="info">
+                <Condition key="healthState" operator="==" thresholdType="static" type="metric" value="OK" valueType="string"/>
+            </State>
+        </SymptomDefinition>
+      
+        <SymptomDefinition adapterKind="ESightAdapter" cancelCycle="1" id="SymptomDefinitionRaidWarning" nameKey="1202" resourceKind="raid" waitCycle="1">
+            <State severity="warning">
+                <Condition key="healthState" operator="==" thresholdType="static" type="metric" value="Warning" valueType="string"/>
+            </State>
+        </SymptomDefinition>
+        
+        <SymptomDefinition adapterKind="ESightAdapter" cancelCycle="1" id="SymptomDefinitionRaidUnkown" nameKey="1203" resourceKind="raid" waitCycle="1">
             <State severity="warning">
                 <Condition key="healthState" operator="==" thresholdType="static" type="metric" value="Unknown" valueType="string"/>
             </State>
         </SymptomDefinition>
         
-        <SymptomDefinition adapterKind="ESightAdapter" cancelCycle="1" id="SymptomDefinitionRaidM2" nameKey="204" resourceKind="raid" waitCycle="1">
-            <State severity="critical">
-                <Condition key="healthState" operator="==" thresholdType="static" type="metric" value="Faulty" valueType="string"/>
+        <SymptomDefinition adapterKind="ESightAdapter" cancelCycle="1" id="SymptomDefinitionRaidImmediate" nameKey="1204" resourceKind="raid" waitCycle="1">
+            <State severity="immediate">
+                <Condition key="healthState" operator="==" thresholdType="static" type="metric" value="Immediate" valueType="string"/>
             </State>
         </SymptomDefinition>
+        
+        <SymptomDefinition adapterKind="ESightAdapter" cancelCycle="1" id="SymptomDefinitionRaidCritical" nameKey="1205" resourceKind="raid" waitCycle="1">
+            <State severity="critical">
+                <Condition key="healthState" operator="==" thresholdType="static" type="metric" value="Critical" valueType="string"/>
+            </State>
+        </SymptomDefinition>
+		
+       <!-- RAID group --> 
+        <SymptomDefinition adapterKind="ESightAdapter" cancelCycle="1" id="SymptomDefinitionRaidGroupInfo" nameKey="1201" resourceKind="raidGroup" waitCycle="1">
+            <State severity="info">
+                <Condition key="healthState" operator="==" thresholdType="static" type="metric" value="OK" valueType="string"/>
+            </State>
+        </SymptomDefinition>
+      
+        <SymptomDefinition adapterKind="ESightAdapter" cancelCycle="1" id="SymptomDefinitionRaidGroupWarning" nameKey="1202" resourceKind="raidGroup" waitCycle="1">
+            <State severity="warning">
+                <Condition key="healthState" operator="==" thresholdType="static" type="metric" value="Warning" valueType="string"/>
+            </State>
+        </SymptomDefinition>
+        
+        <SymptomDefinition adapterKind="ESightAdapter" cancelCycle="1" id="SymptomDefinitionRaidGroupUnkown" nameKey="1203" resourceKind="raidGroup" waitCycle="1">
+            <State severity="warning">
+                <Condition key="healthState" operator="==" thresholdType="static" type="metric" value="Unknown" valueType="string"/>
+            </State>
+        </SymptomDefinition>
+        
+        <SymptomDefinition adapterKind="ESightAdapter" cancelCycle="1" id="SymptomDefinitionRaidGroupImmediate" nameKey="1204" resourceKind="raidGroup" waitCycle="1">
+            <State severity="immediate">
+                <Condition key="healthState" operator="==" thresholdType="static" type="metric" value="Immediate" valueType="string"/>
+            </State>
+        </SymptomDefinition>
+        
+        <SymptomDefinition adapterKind="ESightAdapter" cancelCycle="1" id="SymptomDefinitionRaidGroupCritical" nameKey="1205" resourceKind="raidGroup" waitCycle="1">
+            <State severity="critical">
+                <Condition key="healthState" operator="==" thresholdType="static" type="metric" value="Critical" valueType="string"/>
+            </State>
+        </SymptomDefinition>        
         
         <!-- Mezz -->
-       <SymptomDefinition adapterKind="ESightAdapter" cancelCycle="1" id="SymptomDefinitionMezz1" nameKey="205" resourceKind="mezz" waitCycle="1">
+        <SymptomDefinition adapterKind="ESightAdapter" cancelCycle="1" id="SymptomDefinitionMezzInfo" nameKey="1301" resourceKind="mezz" waitCycle="1">
+            <State severity="info">
+                <Condition key="mezzHealthStatus" operator="==" thresholdType="static" type="metric" value="OK" valueType="string"/>
+            </State>
+        </SymptomDefinition>
+      
+        <SymptomDefinition adapterKind="ESightAdapter" cancelCycle="1" id="SymptomDefinitionMezzWarning" nameKey="1302" resourceKind="mezz" waitCycle="1">
             <State severity="warning">
-                <Condition key="mezzHealthStatus" operator="==" thresholdType="static" type="metric" value="Offline" valueType="string"/>
+                <Condition key="mezzHealthStatus" operator="==" thresholdType="static" type="metric" value="Warning" valueType="string"/>
             </State>
         </SymptomDefinition>
         
-        <SymptomDefinition adapterKind="ESightAdapter" cancelCycle="1" id="SymptomDefinitionMezz2" nameKey="206" resourceKind="mezz" waitCycle="1">
+        <SymptomDefinition adapterKind="ESightAdapter" cancelCycle="1" id="SymptomDefinitionMezzUnkown" nameKey="1303" resourceKind="mezz" waitCycle="1">
             <State severity="warning">
                 <Condition key="mezzHealthStatus" operator="==" thresholdType="static" type="metric" value="Unknown" valueType="string"/>
             </State>
         </SymptomDefinition>
         
-        <SymptomDefinition adapterKind="ESightAdapter" cancelCycle="1" id="SymptomDefinitionMezzM2" nameKey="207" resourceKind="mezz" waitCycle="1">
-            <State severity="critical">
-                <Condition key="mezzHealthStatus" operator="==" thresholdType="static" type="metric" value="Faulty" valueType="string"/>
+        <SymptomDefinition adapterKind="ESightAdapter" cancelCycle="1" id="SymptomDefinitionMezzImmediate" nameKey="1304" resourceKind="mezz" waitCycle="1">
+            <State severity="immediate">
+                <Condition key="mezzHealthStatus" operator="==" thresholdType="static" type="metric" value="Immediate" valueType="string"/>
             </State>
         </SymptomDefinition>
+        
+        <SymptomDefinition adapterKind="ESightAdapter" cancelCycle="1" id="SymptomDefinitionMezzCritical" nameKey="1305" resourceKind="mezz" waitCycle="1">
+            <State severity="critical">
+                <Condition key="mezzHealthStatus" operator="==" thresholdType="static" type="metric" value="Critical" valueType="string"/>
+            </State>
+        </SymptomDefinition>
+		
+        <!-- Mezz group -->
+        <SymptomDefinition adapterKind="ESightAdapter" cancelCycle="1" id="SymptomDefinitionMezzGroupInfo" nameKey="1301" resourceKind="mezzGroup" waitCycle="1">
+            <State severity="info">
+                <Condition key="mezzHealthStatus" operator="==" thresholdType="static" type="metric" value="OK" valueType="string"/>
+            </State>
+        </SymptomDefinition>
+      
+        <SymptomDefinition adapterKind="ESightAdapter" cancelCycle="1" id="SymptomDefinitionMezzGroupWarning" nameKey="1302" resourceKind="mezzGroup" waitCycle="1">
+            <State severity="warning">
+                <Condition key="mezzHealthStatus" operator="==" thresholdType="static" type="metric" value="Warning" valueType="string"/>
+            </State>
+        </SymptomDefinition>
+        
+        <SymptomDefinition adapterKind="ESightAdapter" cancelCycle="1" id="SymptomDefinitionMezzGroupUnkown" nameKey="1303" resourceKind="mezzGroup" waitCycle="1">
+            <State severity="warning">
+                <Condition key="mezzHealthStatus" operator="==" thresholdType="static" type="metric" value="Unknown" valueType="string"/>
+            </State>
+        </SymptomDefinition>
+        
+        <SymptomDefinition adapterKind="ESightAdapter" cancelCycle="1" id="SymptomDefinitionMezzGroupImmediate" nameKey="1304" resourceKind="mezzGroup" waitCycle="1">
+            <State severity="immediate">
+                <Condition key="mezzHealthStatus" operator="==" thresholdType="static" type="metric" value="Immediate" valueType="string"/>
+            </State>
+        </SymptomDefinition>
+        
+        <SymptomDefinition adapterKind="ESightAdapter" cancelCycle="1" id="SymptomDefinitionMezzGroupCritical" nameKey="1305" resourceKind="mezzGroup" waitCycle="1">
+            <State severity="critical">
+                <Condition key="mezzHealthStatus" operator="==" thresholdType="static" type="metric" value="Critical" valueType="string"/>
+            </State>
+        </SymptomDefinition>		
         
     </SymptomDefinitions>
     

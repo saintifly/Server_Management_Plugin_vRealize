@@ -15,36 +15,41 @@ public class ConvertUtils {
     
     /**
      * 健康状态转换处理.
-     * 0 = normal
-     * -1 = offline
-     * -2 = unknown
-     * 其他 = error 
+     * 0 = OK
+     * 2,5 = Warning
+     * 3 = Immediate
+     * 4,6,7,8 = Critical
+     * -1,-2, 其他 = Unknown 
      * @param healthState 健康状态
      * @return 转换后的字符串
      */
     public static String convertHealthState(int healthState) {
-        switch (healthState) {
-            case 0 : {
-                return "Normal";
+
+        switch(healthState){
+    	    case 0 : {
+               return "OK";
             }
-            case 2:
-            case 3:
-            case 4:
-            case 5:
+    	    case 2:
+    	    case 5: {
+    	    	return "Warning";
+    	    }
+    	    case 3: {
+    	    	return "Immediate";
+    	    }
+    	    case 4:
             case 6:
             case 7:
-            case 8: {
-                return "Faulty";
-            }
-            case -1:
-            case -2: {
+    	    case 8:{
+    	    	return "Critical";
+    	    }
+    	    case -1:
+    	    case -2: {
                 return "Unknown";
             }
             default: {
                 return "Unknown";
             }
-            
-        } 
+    	}
     }
     
     

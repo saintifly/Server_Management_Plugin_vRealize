@@ -33,9 +33,9 @@
     <loadproperties srcFile="${dirs.src}/adapter.properties"/>
     <loadproperties srcFile="${dirs.conf}/version.txt"/>
   	
-  	<delete includeemptydirs="true">
+    <delete includeemptydirs="true" failonerror="false">
       <fileset dir="${dirs.build}" includes="**/*" defaultexcludes="false"/>
-  	</delete>
+    </delete>
   	
     <mkdir dir="${dirs.build}" />
     <mkdir dir="${dirs.compiled}" />

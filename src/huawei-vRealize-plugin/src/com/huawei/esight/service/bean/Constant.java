@@ -83,7 +83,8 @@ public class Constant {
     public static final String ATTR_MEZZ_IB_MAC = "mezzIBMac";
     public static final String ATTR_MEZZ_FCWWPN = "mezzFCWWPN";
     
-    
+    public static final String ATTR_PORT_NAME = "portName";
+    public static final String ATTR_LINK_STATUS = "linkStatus";
     
     //devices attributes
     public static final String ATTR_DN = "dn";

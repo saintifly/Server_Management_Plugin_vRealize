@@ -2,7 +2,7 @@
 <solution>
 <managementPack>
 <name>HuaweiManagementPack</name>
-<version>1.2.0</version>
+<version>1.2.1</version>
 <minimumProductVersion>6.0.0</minimumProductVersion>
 <localizations lang="en">
 <localization lang="en">
@@ -24,7 +24,7 @@
 <platform>Windows</platform>
 </platforms>
 <adapters>
-<adapter>E:/project/v_realize/github-src/Server_Management_Plugin_vRealize/src/huawei-vRealize-plugin</adapter>
+<adapter>D:/ServerPlugin/vRealize/code/src/huawei-vRealize-plugin</adapter>
 </adapters>
 <scripts runScriptsOnAllNodes="false">
 <pre>preAdapters.py</pre>

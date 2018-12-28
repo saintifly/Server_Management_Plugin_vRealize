@@ -184,16 +184,19 @@ public class ESightAdapter extends AdapterBase {
                 List<BoardBean> boardBeans = device.getBoard();
                 if (boardBeans.isEmpty() == false) {
                     List<ResourceKey> boardResourceKey = new ArrayList<ResourceKey>();
+                    List<String> childHealthList = new ArrayList<>();
                     for (BoardBean board : boardBeans) {
-                        
-                        if (ConvertUtils.isOffline(board.getPresentState())) {
-                            continue;
-                        }
+                    	
+                        //show all resource since 2018.12.12
+//                        if (ConvertUtils.isOffline(board.getPresentState())) {
+//                            continue;
+//                        }
                         
                         ResourceKey boardKey = board.convert2Resource(host + deviceBean.getDn(), 
                                 getAdapterKind(), metricsByResource);
                         boardResourceKey.add(boardKey);
                         allResourceList.add(boardKey);
+                        childHealthList.add(ConvertUtils.convertHealthState(board.getHealthState()));
                     }
                     
                     //board Group
@@ -201,83 +204,101 @@ public class ESightAdapter extends AdapterBase {
                             Constant.KIND_BOARD_GROUP,
                             boardResourceKey, relationshipsByResource, getAdapterKind());
                     deviceChildKeys.add(boardGroup);
+                    //add health state here
+                    setHealStatus4GroupObject(boardGroup, Constant.ATTR_HEALTHSTATE, childHealthList);
                 }
                 
                 //CPU
                 List<CPUBean> cpuBeans = device.getCPU();
                 if (cpuBeans.isEmpty() == false) {
                     List<ResourceKey> cpuResourceKey = new ArrayList<ResourceKey>();
+                    List<String> childHealthList = new ArrayList<>();
                     for (CPUBean cpu : cpuBeans) {
-                        
-                        if (ConvertUtils.isOffline(cpu.getPresentState())) {
-                            continue;
-                        }
+                    	//show all the resource since 2018.12.12
+//                        if (ConvertUtils.isOffline(cpu.getPresentState())) {
+//                            continue;
+//                        }
                         
                         ResourceKey key = cpu.convert2Resource(host + deviceBean.getDn(), 
                                 getAdapterKind(), metricsByResource);
                         cpuResourceKey.add(key);
                         allResourceList.add(key);
+                        childHealthList.add(ConvertUtils.convertHealthState(cpu.getHealthState()));
                     }
                     //CPU Group
                     ResourceKey cpuGroup = device.createGroupKey(Constant.TREE_CPU_GROUP, 
                             Constant.KIND_CPU_GROUP,
                             cpuResourceKey, relationshipsByResource, getAdapterKind()); 
                     deviceChildKeys.add(cpuGroup);
-                    
+                    //add health state here
+                    setHealStatus4GroupObject(cpuGroup, Constant.ATTR_HEALTHSTATE, childHealthList);
                 }
                 
                 //disk
                 List<DiskBean> diskBeans = device.getDisk();
                 if (diskBeans.isEmpty() == false) {
                     List<ResourceKey> diskResourceKey = new ArrayList<ResourceKey>();
-                    for (DiskBean bean : diskBeans) {
-                        if (ConvertUtils.isOffline(bean.getPresentState())) {
-                            continue;
-                        }
-                        ResourceKey key = bean.convert2Resource(host + deviceBean.getDn(), 
+                    List<String> childHealthList = new ArrayList<>();
+                    for (DiskBean disk : diskBeans) {
+                    	//show all the resource since 2018.12.12
+//                        if (ConvertUtils.isOffline(disk.getPresentState())) {
+//                            continue;
+//                        }
+                        ResourceKey key = disk.convert2Resource(host + deviceBean.getDn(), 
                                 getAdapterKind(), metricsByResource);
                         diskResourceKey.add(key);
                         allResourceList.add(key);
+                        childHealthList.add(ConvertUtils.convertHealthState(disk.getHealthState()));
                     }
                     //disk Group
                     ResourceKey diskGroup = device.createGroupKey(Constant.TREE_DISK_GROUP, 
                             Constant.KIND_DISK_GROUP,
                             diskResourceKey, relationshipsByResource, getAdapterKind());
                     deviceChildKeys.add(diskGroup);
+                    //add health state here
+                    setHealStatus4GroupObject(diskGroup, Constant.ATTR_HEALTHSTATE, childHealthList);
                 }
                 
                 //fan
                 List<FanBean> fanBeans = device.getFan();
                 if (fanBeans.isEmpty() == false) {
                     List<ResourceKey> fanResourceKey = new ArrayList<ResourceKey>();
-                    for (FanBean bean : fanBeans) {
-                        if (ConvertUtils.isOffline(bean.getPresentState())) {
-                            continue;
-                        }
-                        ResourceKey key = bean.convert2Resource(host + deviceBean.getDn(),
+                    List<String> childHealthList = new ArrayList<>();
+                    for (FanBean fan : fanBeans) {
+                    	//show all the resource since 2018.12.12
+//                        if (ConvertUtils.isOffline(fan.getPresentState())) {
+//                            continue;
+//                        }
+                        ResourceKey key = fan.convert2Resource(host + deviceBean.getDn(),
                         		getAdapterKind(), metricsByResource);
                         fanResourceKey.add(key);
                         allResourceList.add(key);
+                        childHealthList.add(ConvertUtils.convertHealthState(fan.getHealthState()));
                     }
                     //fan Group
                     ResourceKey fanGroup = device.createGroupKey(Constant.TREE_FAN_GROUP,
                             Constant.KIND_FAN_GROUP,
                             fanResourceKey, relationshipsByResource, getAdapterKind()); 
                     deviceChildKeys.add(fanGroup);
+                    //add health state here
+                    setHealStatus4GroupObject(fanGroup, Constant.ATTR_HEALTHSTATE, childHealthList);
                 }
                 
                 //memory
                 List<MemoryBean> memoryBeans = device.getMemory();
                 if (memoryBeans.isEmpty() == false) {
                     List<ResourceKey> memoryResourceKey = new ArrayList<ResourceKey>();
-                    for (MemoryBean bean : memoryBeans) {
-                        if (ConvertUtils.isOffline(bean.getPresentState())) {
-                            continue;
-                        }
-                        ResourceKey key = bean.convert2Resource(host + deviceBean.getDn(), 
+                    List<String> childHealthList = new ArrayList<>();
+                    for (MemoryBean memory : memoryBeans) {
+                    	//show all the resource since 2018.12.12
+//                        if (ConvertUtils.isOffline(memory.getPresentState())) {
+//                            continue;
+//                        }
+                        ResourceKey key = memory.convert2Resource(host + deviceBean.getDn(), 
                                 getAdapterKind(), metricsByResource);
                         memoryResourceKey.add(key);
                         allResourceList.add(key);
+                        childHealthList.add(ConvertUtils.convertHealthState(memory.getHealthState()));
                     }
                     
                     //memory Group
@@ -285,68 +306,87 @@ public class ESightAdapter extends AdapterBase {
                             Constant.KIND_MEMORY_GROUP,
                             memoryResourceKey, relationshipsByResource, getAdapterKind()); 
                     deviceChildKeys.add(memoryGroup);
+                    //add health state here
+                    setHealStatus4GroupObject(memoryGroup, Constant.ATTR_HEALTHSTATE, childHealthList);
                 }
                 
                 //PSU
                 List<PSUBean> psuBeans = device.getPSU();
                 if (psuBeans.isEmpty() == false) {
                     List<ResourceKey> psuResourceKey = new ArrayList<ResourceKey>();
-                    for (PSUBean bean : psuBeans) {
-                        if (ConvertUtils.isOffline(bean.getPresentState())) {
-                            continue;
-                        }
-                        ResourceKey key = bean.convert2Resource(host + deviceBean.getDn(), 
+                    List<String> childHealthList = new ArrayList<>();
+                    for (PSUBean psu : psuBeans) {
+                    	//show all the resource since 2018.12.12
+//                        if (ConvertUtils.isOffline(psu.getPresentState())) {
+//                            continue;
+//                        }
+                        ResourceKey key = psu.convert2Resource(host + deviceBean.getDn(), 
                                 getAdapterKind(), metricsByResource);
                         psuResourceKey.add(key);
                         allResourceList.add(key);
+                        childHealthList.add(ConvertUtils.convertHealthState(psu.getHealthState()));
                     }
                     //PSU Group
                     ResourceKey psuGroup = device.createGroupKey(Constant.TREE_PSU_GROUP, 
                             Constant.KIND_PSU_GROUP,
                             psuResourceKey,relationshipsByResource,getAdapterKind());
                     deviceChildKeys.add(psuGroup);
+                    //add health state here
+                    setHealStatus4GroupObject(psuGroup, Constant.ATTR_HEALTHSTATE, childHealthList);
                 }
                 
                 //device Group
                 if (childBladeDeviceKeyList.isEmpty() == false) {
+                	List<String> childHealthList = new ArrayList<>();
+                	childHealthList.add(ConvertUtils.convertHealthState(device.getStatus()));
                     ResourceKey devicesGroup = device.createGroupKey(Constant.TREE_DEVICES_GROUP, 
                             Constant.KIND_DEVICES_GROUP,
                             childBladeDeviceKeyList, relationshipsByResource, getAdapterKind());
                     deviceChildKeys.add(devicesGroup);
+                    //TODO add health state here
+                    setHealStatus4GroupObject(devicesGroup, Constant.ATTR_STATUS, childHealthList);
                 }
                 
                 //PCIE
                 List<PCIEBean> pcieBeans = device.getPCIE();
                 if (pcieBeans.isEmpty() == false) {
                     List<ResourceKey> pcieResourceKey = new ArrayList<ResourceKey>();
-                    for (PCIEBean bean : pcieBeans) {
-                        ResourceKey key = bean.convert2Resource(host + deviceBean.getDn(), 
+                    List<String> childHealthList = new ArrayList<>();
+                    for (PCIEBean pcie : pcieBeans) {
+                        ResourceKey key = pcie.convert2Resource(host + deviceBean.getDn(), 
                                 getAdapterKind(), metricsByResource);
                         pcieResourceKey.add(key);
                         allResourceList.add(key);
+                        childHealthList.add(ConvertUtils.convertHealthState(pcie.getPcieSsdCardHealthStatus()));
                     }
                     //PCIE Group
                     ResourceKey pcieGroup = device.createGroupKey(Constant.TREE_PCIE_GROUP, 
                             Constant.KIND_PCIE_GROUP,
                             pcieResourceKey, relationshipsByResource, getAdapterKind()); 
                     deviceChildKeys.add(pcieGroup);
+                    //add health state here
+                    setHealStatus4GroupObject(pcieGroup, Constant.ATTR_PCIESSDCARD_HEALTHSTATUS, childHealthList);
                 }
                 
                 //RAID
                 List<RAIDBean> raidBeans = device.getRAID();
                 if (raidBeans.isEmpty() == false) {
                     List<ResourceKey> raidResourceKey = new ArrayList<ResourceKey>();
-                    for (RAIDBean bean : raidBeans) {
-                        ResourceKey key = bean.convert2Resource(host + deviceBean.getDn(), 
+                    List<String> childHealthList = new ArrayList<>();
+                    for (RAIDBean raid : raidBeans) {
+                        ResourceKey key = raid.convert2Resource(host + deviceBean.getDn(), 
                                 getAdapterKind(), metricsByResource);
                         raidResourceKey.add(key);
                         allResourceList.add(key);
+                        childHealthList.add(ConvertUtils.convertHealthState(raid.getHealthState()));
                     }
                     //RAID Group
                     ResourceKey raidGroup = device.createGroupKey(Constant.TREE_RAID_GROUP, 
                             Constant.KIND_RAID_GROUP,
                             raidResourceKey, relationshipsByResource, getAdapterKind()); 
                     deviceChildKeys.add(raidGroup);
+                    //add health state here
+                    setHealStatus4GroupObject(raidGroup, Constant.ATTR_HEALTHSTATE, childHealthList);
                 }
                 
                 //network card
@@ -370,6 +410,7 @@ public class ESightAdapter extends AdapterBase {
                 List<MezzBean> mezzBeans = device.getMezz();
                 if (mezzBeans.isEmpty() == false) {
                     List<ResourceKey> mezzResourceKey = new ArrayList<ResourceKey>();
+                    List<String> childHealthList = new ArrayList<>();
                     for (MezzBean bean : mezzBeans) {
                     	//show all the Mezz card, added on 2018.06.26
 //                        if (ConvertUtils.isOffline(bean.getPresentState())) {
@@ -379,12 +420,15 @@ public class ESightAdapter extends AdapterBase {
                                 getAdapterKind(), metricsByResource);
                         mezzResourceKey.add(key);
                         allResourceList.add(key);
+                        childHealthList.add(ConvertUtils.convertHealthState(bean.getMezzHealthStatus()));
                     }
                     //PSU Group
                     ResourceKey mezzGroup = device.createGroupKey(Constant.TREE_MEZZ_GROUP, 
                             Constant.KIND_MEZZ_GROUP,
                             mezzResourceKey,relationshipsByResource,getAdapterKind());
                     deviceChildKeys.add(mezzGroup);
+                    //add health state here
+                    setHealStatus4GroupObject(mezzGroup, Constant.ATTR_MEZZ_HEALTH_STATUS, childHealthList);
                 }
                 
                 //设置server device和group object(如cpuGroup, diskGroup, fanGroup等)的关联关系
@@ -655,4 +699,49 @@ public class ESightAdapter extends AdapterBase {
         
         return true;
     }
+    
+    /**
+     * 
+     * @param resourceKey
+     * @param childStatusList :Optional values are {OK, Unknown, Warning, Immediate, Critical}
+     * Level from High to low is:  OK, Unknown, Warning, Immediate, Critical
+     */
+    private void setHealStatus4GroupObject(ResourceKey resourceKey, String attrName, List<String> childStatusList){
+    	String defaultStatus = "OK";
+    	for(String status: childStatusList){
+    		switch (defaultStatus){
+    		case "OK":{
+    			defaultStatus = status;
+    		}
+    		break;
+    		case "Unknown":{
+    			if(status.equals("Warning")||status.equals("Immediate")||status.equals("Critical")){
+    				defaultStatus = status;
+    			}
+    		}
+    		break;
+    		case "Warning":{
+    			if(status.equals("Immediate")||status.equals("Critical")){
+    				defaultStatus = status;
+    			}
+    		}
+    		break;
+    		case "Immediate":{
+    			if(status.equals("Critical")){
+    				defaultStatus = status;
+    			}
+    		}
+    		break;
+    		case "Critical":{
+    			break;
+    		}
+    		}
+    	}
+    	List<MetricData> metricDataList = new ArrayList<>();
+    	long timestamp = System.currentTimeMillis();
+    	metricDataList.add(new MetricData(
+                new MetricKey(false, attrName), timestamp, defaultStatus));
+//    	metricsByResource.put(resourceKey, metricDataList);
+    }
+    
 }

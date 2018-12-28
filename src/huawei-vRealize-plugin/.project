@@ -24,7 +24,7 @@
 		<link>
 			<name>test-src</name>
 			<type>2</type>
-			<location>E:/project/v_realize/github-src/Server_Management_Plugin_vRealize/test/test-src</location>
+			<location>D:/ServerPlugin/vRealize/code/test/test-src</location>
 		</link>
 	</linkedResources>
 </projectDescription>

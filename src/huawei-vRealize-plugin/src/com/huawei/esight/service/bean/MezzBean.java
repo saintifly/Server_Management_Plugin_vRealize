@@ -182,20 +182,7 @@ public class MezzBean implements TreeNodeResource {
         this.uuid = uuid;
     }
 
-    /**
-     * 健康状态转换处理.
-     * @param healthState 健康状态
-     * @return 转换后的字符串
-     */
-    public String convertHealthState() {
-       if (this.mezzHealthStatus == 1) {
-           return "Normal";
-       } else if (this.mezzHealthStatus == -2 || this.mezzHealthStatus == 5 || this.presentState == -2) {
-           return "Unknown";
-       } else {
-           return "Faulty";
-       } 
-    }
+
 
     @Override
     public ResourceKey convert2Resource(String id, String adapterKind,
@@ -215,7 +202,7 @@ public class MezzBean implements TreeNodeResource {
                 new MetricData(new MetricKey(true).add(Constant.ATTR_NAME), timestamp, this.name));
         metricData.add(
                 new MetricData(new MetricKey(false).add(Constant.ATTR_MEZZ_HEALTH_STATUS), 
-                        timestamp, convertHealthState()));
+                        timestamp, ConvertUtils.convertHealthState(this.getMezzHealthStatus())));
         metricData.add(
                 new MetricData(new MetricKey(true).add(Constant.ATTR_PRESENTSTATE), timestamp, 
                         ConvertUtils.convertPresentState(this.presentState)));

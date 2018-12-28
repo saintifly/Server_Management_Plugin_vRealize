@@ -202,30 +202,14 @@
             <Usage>details</Usage>
             <Usage>content</Usage>
             <Controls>
-                <Control id="time-interval-selector_id_16" type="time-interval-selector" visible="false">
+                <Control id="time-interval-selector_id_134" type="time-interval-selector" visible="false">
                     <Property name="advancedTimeMode" value="false"/>
                     <Property name="unit" value="DAYS"/>
                     <Property name="count" value="7"/>
                 </Control>
-                <Control id="attributes-selector_id_17" type="attributes-selector" visible="false">
+                <Control id="attributes-selector_id_135" type="attributes-selector" visible="false">
                     <Property name="attributeInfos">
                         <List>
-                            <Item>
-<Value>
-    <Property name="objectType" value="RESOURCE"/>
-    <Property name="attributeKey" value="name"/>
-    <Property name="isStringAttribute" value="true"/>
-    <Property name="adapterKind" value="ESightAdapter"/>
-    <Property name="resourceKind" value="board"/>
-    <Property name="rollUpCount" value="0"/>
-    <Property name="transformations">
-        <List>
-            <Item value="LAST"/>
-        </List>
-    </Property>
-    <Property name="isProperty" value="true"/>
-</Value>
-                            </Item>
                             <Item>
 <Value>
     <Property name="objectType" value="RESOURCE"/>
@@ -389,13 +373,13 @@
                         </List>
                     </Property>
                 </Control>
-                <Control id="pagination-control_id_18" type="pagination-control" visible="true">
+                <Control id="pagination-control_id_136" type="pagination-control" visible="true">
                     <Property name="start" value="0"/>
                     <Property name="size" value="50"/>
                 </Control>
             </Controls>
             <DataProviders>
-                <DataProvider dataType="list-view" id="list-view_id_15"/>
+                <DataProvider dataType="list-view" id="list-view_id_133"/>
             </DataProviders>
             <Presentation type="list"/>
         </ViewDef>
@@ -409,25 +393,57 @@
             <Usage>details</Usage>
             <Usage>content</Usage>
             <Controls>
-                <Control id="time-interval-selector_id_80" type="time-interval-selector" visible="false">
+                <Control id="time-interval-selector_id_102" type="time-interval-selector" visible="false">
                     <Property name="advancedTimeMode" value="false"/>
                     <Property name="unit" value="DAYS"/>
                     <Property name="count" value="7"/>
                 </Control>
-                <Control id="attributes-selector_id_81" type="attributes-selector" visible="false">
+                <Control id="attributes-selector_id_103" type="attributes-selector" visible="false">
                     <Property name="attributeInfos">
                         <List>
                             <Item>
 <Value>
     <Property name="objectType" value="RESOURCE"/>
-    <Property name="attributeKey" value="netWorkCardName"/>
+    <Property name="attributeKey" value="portName"/>
     <Property name="isStringAttribute" value="true"/>
     <Property name="adapterKind" value="ESightAdapter"/>
     <Property name="resourceKind" value="card"/>
     <Property name="rollUpCount" value="0"/>
     <Property name="transformations">
         <List>
-            <Item value="LAST"/>
+            <Item value="CURRENT"/>
+        </List>
+    </Property>
+    <Property name="isProperty" value="true"/>
+</Value>
+                            </Item>
+                            <Item>
+<Value>
+    <Property name="objectType" value="RESOURCE"/>
+    <Property name="attributeKey" value="linkStatus"/>
+    <Property name="isStringAttribute" value="true"/>
+    <Property name="adapterKind" value="ESightAdapter"/>
+    <Property name="resourceKind" value="card"/>
+    <Property name="rollUpCount" value="0"/>
+    <Property name="transformations">
+        <List>
+            <Item value="CURRENT"/>
+        </List>
+    </Property>
+    <Property name="isProperty" value="true"/>
+</Value>
+                            </Item>
+                            <Item>
+<Value>
+    <Property name="objectType" value="RESOURCE"/>
+    <Property name="attributeKey" value="macAdress"/>
+    <Property name="isStringAttribute" value="true"/>
+    <Property name="adapterKind" value="ESightAdapter"/>
+    <Property name="resourceKind" value="card"/>
+    <Property name="rollUpCount" value="0"/>
+    <Property name="transformations">
+        <List>
+            <Item value="CURRENT"/>
         </List>
     </Property>
     <Property name="isProperty" value="true"/>
@@ -484,13 +500,13 @@
                         </List>
                     </Property>
                 </Control>
-                <Control id="pagination-control_id_82" type="pagination-control" visible="true">
+                <Control id="pagination-control_id_104" type="pagination-control" visible="true">
                     <Property name="start" value="0"/>
                     <Property name="size" value="50"/>
                 </Control>
             </Controls>
             <DataProviders>
-                <DataProvider dataType="list-view" id="list-view_id_79"/>
+                <DataProvider dataType="list-view" id="list-view_id_101"/>
             </DataProviders>
             <Presentation type="list"/>
         </ViewDef>
@@ -504,30 +520,14 @@
             <Usage>details</Usage>
             <Usage>content</Usage>
             <Controls>
-                <Control id="time-interval-selector_id_88" type="time-interval-selector" visible="false">
+                <Control id="time-interval-selector_id_110" type="time-interval-selector" visible="false">
                     <Property name="advancedTimeMode" value="false"/>
                     <Property name="unit" value="DAYS"/>
                     <Property name="count" value="7"/>
                 </Control>
-                <Control id="attributes-selector_id_89" type="attributes-selector" visible="false">
+                <Control id="attributes-selector_id_111" type="attributes-selector" visible="false">
                     <Property name="attributeInfos">
                         <List>
-                            <Item>
-<Value>
-    <Property name="objectType" value="RESOURCE"/>
-    <Property name="attributeKey" value="name"/>
-    <Property name="isStringAttribute" value="true"/>
-    <Property name="adapterKind" value="ESightAdapter"/>
-    <Property name="resourceKind" value="pcie"/>
-    <Property name="rollUpCount" value="0"/>
-    <Property name="transformations">
-        <List>
-            <Item value="LAST"/>
-        </List>
-    </Property>
-    <Property name="isProperty" value="true"/>
-</Value>
-                            </Item>
                             <Item>
 <Value>
     <Property name="objectType" value="RESOURCE"/>
@@ -611,13 +611,13 @@
                         </List>
                     </Property>
                 </Control>
-                <Control id="pagination-control_id_90" type="pagination-control" visible="true">
+                <Control id="pagination-control_id_112" type="pagination-control" visible="true">
                     <Property name="start" value="0"/>
                     <Property name="size" value="50"/>
                 </Control>
             </Controls>
             <DataProviders>
-                <DataProvider dataType="list-view" id="list-view_id_87"/>
+                <DataProvider dataType="list-view" id="list-view_id_109"/>
             </DataProviders>
             <Presentation type="list"/>
         </ViewDef>
@@ -631,30 +631,14 @@
             <Usage>details</Usage>
             <Usage>content</Usage>
             <Controls>
-                <Control id="time-interval-selector_id_48" type="time-interval-selector" visible="false">
+                <Control id="time-interval-selector_id_78" type="time-interval-selector" visible="false">
                     <Property name="advancedTimeMode" value="false"/>
                     <Property name="unit" value="DAYS"/>
                     <Property name="count" value="7"/>
                 </Control>
-                <Control id="attributes-selector_id_49" type="attributes-selector" visible="false">
+                <Control id="attributes-selector_id_79" type="attributes-selector" visible="false">
                     <Property name="attributeInfos">
                         <List>
-                            <Item>
-<Value>
-    <Property name="objectType" value="RESOURCE"/>
-    <Property name="attributeKey" value="name"/>
-    <Property name="isStringAttribute" value="true"/>
-    <Property name="adapterKind" value="ESightAdapter"/>
-    <Property name="resourceKind" value="disk"/>
-    <Property name="rollUpCount" value="0"/>
-    <Property name="transformations">
-        <List>
-            <Item value="LAST"/>
-        </List>
-    </Property>
-    <Property name="isProperty" value="true"/>
-</Value>
-                            </Item>
                             <Item>
 <Value>
     <Property name="objectType" value="RESOURCE"/>
@@ -738,13 +722,13 @@
                         </List>
                     </Property>
                 </Control>
-                <Control id="pagination-control_id_50" type="pagination-control" visible="true">
+                <Control id="pagination-control_id_80" type="pagination-control" visible="true">
                     <Property name="start" value="0"/>
                     <Property name="size" value="50"/>
                 </Control>
             </Controls>
             <DataProviders>
-                <DataProvider dataType="list-view" id="list-view_id_47"/>
+                <DataProvider dataType="list-view" id="list-view_id_77"/>
             </DataProviders>
             <Presentation type="list"/>
         </ViewDef>
@@ -758,30 +742,14 @@
             <Usage>details</Usage>
             <Usage>content</Usage>
             <Controls>
-                <Control id="time-interval-selector_id_24" type="time-interval-selector" visible="false">
+                <Control id="time-interval-selector_id_58" type="time-interval-selector" visible="false">
                     <Property name="advancedTimeMode" value="false"/>
                     <Property name="unit" value="DAYS"/>
                     <Property name="count" value="7"/>
                 </Control>
-                <Control id="attributes-selector_id_25" type="attributes-selector" visible="false">
+                <Control id="attributes-selector_id_59" type="attributes-selector" visible="false">
                     <Property name="attributeInfos">
                         <List>
-                            <Item>
-<Value>
-    <Property name="objectType" value="RESOURCE"/>
-    <Property name="attributeKey" value="name"/>
-    <Property name="isStringAttribute" value="true"/>
-    <Property name="adapterKind" value="ESightAdapter"/>
-    <Property name="resourceKind" value="cpu"/>
-    <Property name="rollUpCount" value="0"/>
-    <Property name="transformations">
-        <List>
-            <Item value="LAST"/>
-        </List>
-    </Property>
-    <Property name="isProperty" value="true"/>
-</Value>
-                            </Item>
                             <Item>
 <Value>
     <Property name="objectType" value="RESOURCE"/>
@@ -897,13 +865,13 @@
                         </List>
                     </Property>
                 </Control>
-                <Control id="pagination-control_id_26" type="pagination-control" visible="true">
+                <Control id="pagination-control_id_60" type="pagination-control" visible="true">
                     <Property name="start" value="0"/>
                     <Property name="size" value="50"/>
                 </Control>
             </Controls>
             <DataProviders>
-                <DataProvider dataType="list-view" id="list-view_id_23"/>
+                <DataProvider dataType="list-view" id="list-view_id_57"/>
             </DataProviders>
             <Presentation type="list"/>
         </ViewDef>
@@ -917,30 +885,14 @@
             <Usage>details</Usage>
             <Usage>content</Usage>
             <Controls>
-                <Control id="time-interval-selector_id_56" type="time-interval-selector" visible="false">
+                <Control id="time-interval-selector_id_86" type="time-interval-selector" visible="false">
                     <Property name="advancedTimeMode" value="false"/>
                     <Property name="unit" value="DAYS"/>
                     <Property name="count" value="7"/>
                 </Control>
-                <Control id="attributes-selector_id_57" type="attributes-selector" visible="false">
+                <Control id="attributes-selector_id_87" type="attributes-selector" visible="false">
                     <Property name="attributeInfos">
                         <List>
-                            <Item>
-<Value>
-    <Property name="objectType" value="RESOURCE"/>
-    <Property name="attributeKey" value="name"/>
-    <Property name="isStringAttribute" value="true"/>
-    <Property name="adapterKind" value="ESightAdapter"/>
-    <Property name="resourceKind" value="fan"/>
-    <Property name="rollUpCount" value="0"/>
-    <Property name="transformations">
-        <List>
-            <Item value="LAST"/>
-        </List>
-    </Property>
-    <Property name="isProperty" value="true"/>
-</Value>
-                            </Item>
                             <Item>
 <Value>
     <Property name="objectType" value="RESOURCE"/>
@@ -1056,13 +1008,13 @@
                         </List>
                     </Property>
                 </Control>
-                <Control id="pagination-control_id_58" type="pagination-control" visible="true">
+                <Control id="pagination-control_id_88" type="pagination-control" visible="true">
                     <Property name="start" value="0"/>
                     <Property name="size" value="50"/>
                 </Control>
             </Controls>
             <DataProviders>
-                <DataProvider dataType="list-view" id="list-view_id_55"/>
+                <DataProvider dataType="list-view" id="list-view_id_85"/>
             </DataProviders>
             <Presentation type="list"/>
         </ViewDef>
@@ -1076,30 +1028,14 @@
             <Usage>details</Usage>
             <Usage>content</Usage>
             <Controls>
-                <Control id="time-interval-selector_id_96" type="time-interval-selector" visible="false">
+                <Control id="time-interval-selector_id_118" type="time-interval-selector" visible="false">
                     <Property name="advancedTimeMode" value="false"/>
                     <Property name="unit" value="DAYS"/>
                     <Property name="count" value="7"/>
                 </Control>
-                <Control id="attributes-selector_id_97" type="attributes-selector" visible="false">
+                <Control id="attributes-selector_id_119" type="attributes-selector" visible="false">
                     <Property name="attributeInfos">
                         <List>
-                            <Item>
-<Value>
-    <Property name="objectType" value="RESOURCE"/>
-    <Property name="attributeKey" value="name"/>
-    <Property name="isStringAttribute" value="true"/>
-    <Property name="adapterKind" value="ESightAdapter"/>
-    <Property name="resourceKind" value="psu"/>
-    <Property name="rollUpCount" value="0"/>
-    <Property name="transformations">
-        <List>
-            <Item value="LAST"/>
-        </List>
-    </Property>
-    <Property name="isProperty" value="true"/>
-</Value>
-                            </Item>
                             <Item>
 <Value>
     <Property name="objectType" value="RESOURCE"/>
@@ -1279,13 +1215,13 @@
                         </List>
                     </Property>
                 </Control>
-                <Control id="pagination-control_id_98" type="pagination-control" visible="true">
+                <Control id="pagination-control_id_120" type="pagination-control" visible="true">
                     <Property name="start" value="0"/>
                     <Property name="size" value="50"/>
                 </Control>
             </Controls>
             <DataProviders>
-                <DataProvider dataType="list-view" id="list-view_id_95"/>
+                <DataProvider dataType="list-view" id="list-view_id_117"/>
             </DataProviders>
             <Presentation type="list"/>
         </ViewDef>
@@ -1299,30 +1235,14 @@
             <Usage>details</Usage>
             <Usage>content</Usage>
             <Controls>
-                <Control id="time-interval-selector_id_64" type="time-interval-selector" visible="false">
+                <Control id="time-interval-selector_id_94" type="time-interval-selector" visible="false">
                     <Property name="advancedTimeMode" value="false"/>
                     <Property name="unit" value="DAYS"/>
                     <Property name="count" value="7"/>
                 </Control>
-                <Control id="attributes-selector_id_65" type="attributes-selector" visible="false">
+                <Control id="attributes-selector_id_95" type="attributes-selector" visible="false">
                     <Property name="attributeInfos">
                         <List>
-                            <Item>
-<Value>
-    <Property name="objectType" value="RESOURCE"/>
-    <Property name="attributeKey" value="name"/>
-    <Property name="isStringAttribute" value="true"/>
-    <Property name="adapterKind" value="ESightAdapter"/>
-    <Property name="resourceKind" value="memory"/>
-    <Property name="rollUpCount" value="0"/>
-    <Property name="transformations">
-        <List>
-            <Item value="LAST"/>
-        </List>
-    </Property>
-    <Property name="isProperty" value="true"/>
-</Value>
-                            </Item>
                             <Item>
 <Value>
     <Property name="objectType" value="RESOURCE"/>
@@ -1438,13 +1358,13 @@
                         </List>
                     </Property>
                 </Control>
-                <Control id="pagination-control_id_66" type="pagination-control" visible="true">
+                <Control id="pagination-control_id_96" type="pagination-control" visible="true">
                     <Property name="start" value="0"/>
                     <Property name="size" value="50"/>
                 </Control>
             </Controls>
             <DataProviders>
-                <DataProvider dataType="list-view" id="list-view_id_63"/>
+                <DataProvider dataType="list-view" id="list-view_id_93"/>
             </DataProviders>
             <Presentation type="list"/>
         </ViewDef>
@@ -1458,30 +1378,14 @@
             <Usage>details</Usage>
             <Usage>content</Usage>
             <Controls>
-                <Control id="time-interval-selector_id_40" type="time-interval-selector" visible="false">
+                <Control id="time-interval-selector_id_142" type="time-interval-selector" visible="false">
                     <Property name="advancedTimeMode" value="false"/>
                     <Property name="unit" value="DAYS"/>
                     <Property name="count" value="7"/>
                 </Control>
-                <Control id="attributes-selector_id_41" type="attributes-selector" visible="false">
+                <Control id="attributes-selector_id_143" type="attributes-selector" visible="false">
                     <Property name="attributeInfos">
                         <List>
-                            <Item>
-<Value>
-    <Property name="objectType" value="RESOURCE"/>
-    <Property name="attributeKey" value="name"/>
-    <Property name="isStringAttribute" value="true"/>
-    <Property name="adapterKind" value="ESightAdapter"/>
-    <Property name="resourceKind" value="serverDevice"/>
-    <Property name="rollUpCount" value="0"/>
-    <Property name="transformations">
-        <List>
-            <Item value="LAST"/>
-        </List>
-    </Property>
-    <Property name="isProperty" value="true"/>
-</Value>
-                            </Item>
                             <Item>
 <Value>
     <Property name="objectType" value="RESOURCE"/>
@@ -1725,13 +1629,13 @@
                         </List>
                     </Property>
                 </Control>
-                <Control id="pagination-control_id_42" type="pagination-control" visible="true">
+                <Control id="pagination-control_id_144" type="pagination-control" visible="true">
                     <Property name="start" value="0"/>
                     <Property name="size" value="50"/>
                 </Control>
             </Controls>
             <DataProviders>
-                <DataProvider dataType="list-view" id="list-view_id_39"/>
+                <DataProvider dataType="list-view" id="list-view_id_141"/>
             </DataProviders>
             <Presentation type="list"/>
         </ViewDef>
@@ -1745,30 +1649,14 @@
             <Usage>details</Usage>
             <Usage>content</Usage>
             <Controls>
-                <Control id="time-interval-selector_id_104" type="time-interval-selector" visible="false">
+                <Control id="time-interval-selector_id_126" type="time-interval-selector" visible="false">
                     <Property name="advancedTimeMode" value="false"/>
                     <Property name="unit" value="DAYS"/>
                     <Property name="count" value="7"/>
                 </Control>
-                <Control id="attributes-selector_id_105" type="attributes-selector" visible="false">
+                <Control id="attributes-selector_id_127" type="attributes-selector" visible="false">
                     <Property name="attributeInfos">
                         <List>
-                            <Item>
-<Value>
-    <Property name="objectType" value="RESOURCE"/>
-    <Property name="attributeKey" value="name"/>
-    <Property name="isStringAttribute" value="true"/>
-    <Property name="adapterKind" value="ESightAdapter"/>
-    <Property name="resourceKind" value="raid"/>
-    <Property name="rollUpCount" value="0"/>
-    <Property name="transformations">
-        <List>
-            <Item value="LAST"/>
-        </List>
-    </Property>
-    <Property name="isProperty" value="true"/>
-</Value>
-                            </Item>
                             <Item>
 <Value>
     <Property name="objectType" value="RESOURCE"/>
@@ -1868,13 +1756,13 @@
                         </List>
                     </Property>
                 </Control>
-                <Control id="pagination-control_id_106" type="pagination-control" visible="true">
+                <Control id="pagination-control_id_128" type="pagination-control" visible="true">
                     <Property name="start" value="0"/>
                     <Property name="size" value="50"/>
                 </Control>
             </Controls>
             <DataProviders>
-                <DataProvider dataType="list-view" id="list-view_id_103"/>
+                <DataProvider dataType="list-view" id="list-view_id_125"/>
             </DataProviders>
             <Presentation type="list"/>
         </ViewDef>
